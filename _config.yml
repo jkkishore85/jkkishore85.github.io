@@ -7,17 +7,13 @@
 url: "https://jkkishore85.github.io"
 baseurl: ""
 
-# If you are building a GitHub project page then use these settings:
-#url: "http://username.github.io/projectname"
-#baseurl: "/projectname"
 
-# Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
 title: Kishore Jagadeesan
 
 # Short description of your site
-description: Kishore's Personal website
+description: Postdoctoral Research Associate | Mass Spectrometry | Proteomics | Data Visualization
 
 # --- Navigation bar options --- #
 
@@ -27,12 +23,12 @@ avatar: "/img/kish_01.png"
 
 # List of links in the navigation bar
 navbar-links:
-  #Home: ""
+  #
   About Me: "aboutme"
   Projects: 
     - MALDIViz: "https://jkkishore85.shinyapps.io/maldiviz/"
   Publications: "publications"
-  
+  Home: ""
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -66,41 +62,22 @@ footer-link-col: "#404040"
 author:
   name: Kishore Jagadeesan
 
-# Select your active Social Network Links.
-# Uncomment the links you want to show in the footer and add your information to each link.
-# You can reorder the items to define the link order.
-# If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-  rss: true
+  rss: false
   email: "jkkishore85@gmail.com"
 # facebook: kishorechemist
   linkedin: jkishore
   github: jkkishore85
-#  og_image: "/img/kish_01.png"
   twitter: kishorejag
-#  reddit: yourname
-#  google-plus: +DeanAttali
-#  xing: yourname
 #  stackoverflow: "3943160/daattali"
-#  snapchat: deanat78
 #  instagram: deanat78
 #  youtube: user/deanat78
-#  spotify: yourname
-#  telephone: +14159998888
-#  steam: deanat78
-#  twitch: yourname
-#  yelp: yourname
 
 # Select which share links to show in posts
 share-links-active:
   twitter: true
   facebook: true
-  google: false
   linkedin: true
-
-# How to display the link to the website in the footer
-# Remove this if you don't want a link in the footer
-# url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
@@ -110,33 +87,8 @@ share-links-active:
 # Fill in your Google Analytics ID to track your website using GA
 google_analytics: "UA-139658802-1"
 
-# Google Tag Manager ID
-#gtm: ""
-
-# Matomo (aka Piwik) Web statistics
-# Uncomment the following section to enable Matomo. The opt-out parameter controls
-# whether or not you want to allow users to opt out of tracking.
-
-#matomo:
-#  site_id: "9"
-#  uri: "demo.wiki.pro"
-#  opt-out: true
-
-# --- Comments --- #
-
-# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-# disqus: ""
-# If you want to use just-comments fill with the API Key
-#just-comments: "ABCD-EFGH-IJKL"
-
-# To use Facebook Comments, fill in a Facebook App ID
-# fb_comment_id: ""
-
 
 # --- Misc --- #
-
-# Facebook App ID
-# fb_app_id: ""
 
 # Excerpt Word Length
 # Truncates the excerpt to the specified number of words on the index page
@@ -241,9 +193,7 @@ prose:
           label: "Publish"
           help: "Check to publish post, uncheck to hide."
 
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+#plugins:
+#  - jekyll-paginate
+#  - jekyll-sitemap
 
-# Beautiful Jekyll / Dean Attali
-# 2fc73a3a967e97599c9763d05e564189
