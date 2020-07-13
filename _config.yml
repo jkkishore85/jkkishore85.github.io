@@ -23,18 +23,16 @@ avatar: "/img/kish_01.png"
 
 # List of links in the navigation bar
 navbar-links:
-  #
   About Me: "aboutme"
   Web Apps:
-    - R/Shiny:
-      - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
+    - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
   Publications: "publications"
   Research Projects involved:
     - Paper based sensors: "http://www.nplindia.in/biomedical-instrumentation-section"
     - PEPMIP: "https://cordis.europa.eu/project/id/264699"
     - ENTRUST: "https://www.bath.ac.uk/projects/entrust-wastewater-fingerprinting-for-public-health-assessment/"
   Home: ""
-
+nav-search: "search"
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
 # title-img: /path/to/image
