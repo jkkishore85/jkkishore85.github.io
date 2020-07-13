@@ -25,9 +25,14 @@ avatar: "/img/kish_01.png"
 navbar-links:
   #
   About Me: "aboutme"
-  Projects: 
-    - MALDIViz: "https://jkkishore85.shinyapps.io/maldiviz/"
+  Web Apps:
+    - R/Shiny:
+      - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
   Publications: "publications"
+  Research Projects involved:
+    - Paper based sensors: "http://www.nplindia.in/biomedical-instrumentation-section"
+    - PEPMIP: "https://cordis.europa.eu/project/id/264699"
+    - ENTRUST: "https://www.bath.ac.uk/projects/entrust-wastewater-fingerprinting-for-public-health-assessment/"
   Home: ""
 
 # If you want to have an image logo in the top-left corner instead of the title text,
