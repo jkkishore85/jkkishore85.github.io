@@ -18,6 +18,6 @@ Currently <strong>Postdoctoral Research Associate</strong> in <a href="https://k
 
 <p class="about-text">
 <span class="fa fa-code about-icon"></span>
-During my PhD developed <a href="http://kishorejagadeesan.com/MALDIViz/"><strong><i> MALDIViz</i></strong></a>, a comprehensive informatics tool for handling dataset from the screening studies. This application can be used to do quality checks, visualizations and analysis of mass spectrometry data.</p>
+During my PhD developed <a href="http://kishorejagadeesan.com/MALDIViz/" target="_blank"><strong><i> MALDIViz</i></strong></a>, a comprehensive informatics tool for handling dataset from the screening studies. This application can be used to do quality checks, visualizations and analysis of mass spectrometry data.</p>
 
 </div>
