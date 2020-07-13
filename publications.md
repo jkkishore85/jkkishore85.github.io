@@ -4,7 +4,7 @@ title: Publications
 ---
 #### 2020
 
-J Rice, AM Kannan, E Castrignanò, **K Jagadeesan**, B Kasprzyk-Hordern [***Wastewater-based epidemiology combined with local prescription analysis as a tool for temporalmonitoring of drugs trends-A UK perspective***] (https://www.sciencedirect.com/science/article/pii/S0048969720329508) _Science of The Total Environment_, 735, 139433
+J Rice, AM Kannan, E Castrignanò, **K Jagadeesan**, B Kasprzyk-Hordern [***Wastewater-based epidemiology combined with local prescription analysis as a tool for temporalmonitoring of drugs trends-A UK perspective***](https://www.sciencedirect.com/science/article/pii/S0048969720329508) _Science of The Total Environment_, 735, 139433
 
 #### 2017
 
