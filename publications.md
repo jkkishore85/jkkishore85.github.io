@@ -4,6 +4,8 @@ title: Publications
 ---
 #### 2020
 
+B Kasprzyk-Hordern, K  Proctor, **K Jagadeesan**, L Lopardo, K J O'Daly, R Standerwick, R Barden [***Estimation of community-wide multi-chemical exposure via water-based chemical mining: Key research gaps drawn from a comprehensive multi-biomarker multi-city dataset***] (https://www.sciencedirect.com/science/article/pii/S0160412020322868) _Environment International_ 147, 106331
+
 J Rice, AM Kannan, E Castrignanò, **K Jagadeesan**, B Kasprzyk-Hordern [***Wastewater-based epidemiology combined with local prescription analysis as a tool for temporalmonitoring of drugs trends-A UK perspective***](https://www.sciencedirect.com/science/article/pii/S0048969720329508) _Science of The Total Environment_, 735, 139433
 
 #### 2017
