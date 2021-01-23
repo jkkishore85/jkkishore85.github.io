@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Published in Environment International 
+title: New article alert - Environment International
 tags: [Water fingerprinting, Chemical mining, Wastewater-based epidemiology,Human exposure]
 ---
 
-New paper published in Environment International
+Our new article on the estimation of community-wide multi-chemical exposure via water-based mining. Many thanks to everyone involved.
+
 
 Barbara Kasprzyk-Hordern, Kathryn Proctor, Kishore Jagadeesan, Luigi Lopardo, Kieran J. O'Daly, Richard Standerwick, Ruth Barden, Estimation of community-wide multi-chemical exposure via water-based chemical mining: Key research gaps drawn from a comprehensive multi-biomarker multi-city dataset, Environment International, Volume 147, 2021, 106331, ISSN 0160-4120, https://doi.org/10.1016/j.envint.2020.106331 (http://www.sciencedirect.com/science/article/pii/S0160412020322868)
 
