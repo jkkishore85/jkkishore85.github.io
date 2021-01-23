@@ -7,13 +7,17 @@
 url: "https://jkkishore85.github.io"
 baseurl: ""
 
-
-
 # Name of website
 title: Kishore Jagadeesan
 
 # Short description of your site
 description: Postdoctoral Research Associate | Mass Spectrometry | Proteomics | Data Visualization
+
+# How many news items to show in the Latest News section on the landing page
+num_latest_news_to_show: 3
+
+# Twitter account to show on the landing page
+twitter: kishorejag
 
 # --- Navigation bar options --- #
 
@@ -28,12 +32,14 @@ navbar-links:
     - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
     - PrAnaViz: "https://pranaviz.github.io/"
   Publications: "publications"
+  Blog: "news"
   #Projects Involved:
   #  - Paper based sensors: "http://www.nplindia.in/biomedical-instrumentation-section"
   #  - PEPMIP: "https://cordis.europa.eu/project/id/264699"
   #  - ENTRUST: "https://www.bath.ac.uk/projects/entrust-wastewater-fingerprinting-for-public-health-assessment/"
   Home: ""
-nav-search: "search"
+  nav-search: "search"
+  
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
 # title-img: /path/to/image
