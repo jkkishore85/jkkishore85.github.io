@@ -23,7 +23,7 @@ twitter: kishorejag
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/kish_01.png"
+#avatar: "/img/kish_01.png"
 
 # List of links in the navigation bar
 navbar-links:
@@ -32,13 +32,11 @@ navbar-links:
     - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
     - PrAnaViz: "https://pranaviz.github.io/"
   Publications: "publications"
-  Blog: "news"
   #Projects Involved:
   #  - Paper based sensors: "http://www.nplindia.in/biomedical-instrumentation-section"
   #  - PEPMIP: "https://cordis.europa.eu/project/id/264699"
   #  - ENTRUST: "https://www.bath.ac.uk/projects/entrust-wastewater-fingerprinting-for-public-health-assessment/"
   Home: ""
-  nav-search: "search"
   
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
