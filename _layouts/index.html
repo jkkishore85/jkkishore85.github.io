@@ -27,7 +27,7 @@ layout: base
 			</p>
 
 			<div class="post-entry">
-			  {{ post.content | strip_html | xml_escape | truncatewords: 15 }}
+			  {{ post.content | strip_html | xml_escape | truncatewords: 40 }}
 			  <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
 			</div>
 		  </article>
@@ -41,7 +41,7 @@ layout: base
 	<div class="col-md-4 col-sm-12">
 	  {% if site.twitter %}
 	    <div id="panel-twitter">
-          <a class="twitter-timeline" data-height="600" href="https://twitter.com/{{ site.twitter }}">Tweets by {{ site.twitter }}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-height="500" href="https://twitter.com/{{ site.twitter }}">Tweets by {{ site.twitter }}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	    </div>
 	  {% endif %}
 	</div>
