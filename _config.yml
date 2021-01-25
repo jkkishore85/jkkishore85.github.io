@@ -28,14 +28,17 @@ twitter: kishorejag
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Web Apps:
+  Research:
+  Apps developed:
     - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
     - PrAnaViz: "https://pranaviz.github.io/"
+  Projects involved:
+    - Paper based Sensors:
+    - PEPMIP:
+    - ENTRUST:
   Publications: "publications"
-  #Projects Involved:
-  #  - Paper based sensors: "http://www.nplindia.in/biomedical-instrumentation-section"
-  #  - PEPMIP: "https://cordis.europa.eu/project/id/264699"
-  #  - ENTRUST: "https://www.bath.ac.uk/projects/entrust-wastewater-fingerprinting-for-public-health-assessment/"
+  Volunteering:
+    - Aeon Charitable Trust:
   Home: ""
   
 # If you want to have an image logo in the top-left corner instead of the title text,
