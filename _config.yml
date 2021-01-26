@@ -33,13 +33,15 @@ navbar-links:
     - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
     - PrAnaViz: "https://pranaviz.github.io/"
   Projects involved:
-    - Paper based Sensors:
-    - PEPMIP:
-    - ENTRUST:
+    - Present
+      - ENTRUST:
+    - Past:
+      - Paper based Sensors:
+      - PEPMIP:
   Publications: "publications"
-  Volunteering:
-    - Aeon Charitable Trust:
-  Home: ""
+  #Other:
+  #  - Aeon Charitable Trust:
+  #Home: ""
   
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
