@@ -32,13 +32,9 @@ navbar-links:
   Apps developed:
     - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
     - PrAnaViz: "https://pranaviz.github.io/"
-  Projects involved:
-    - Present
-      - ENTRUST:
-    - Past:
-      - Paper based Sensors:
-      - PEPMIP:
+  Research: "research"
   Publications: "publications"
+  More: "more"
   #Other:
   #  - Aeon Charitable Trust:
   #Home: ""
