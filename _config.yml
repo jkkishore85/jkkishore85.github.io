@@ -28,13 +28,13 @@ twitter: kishorejag
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Research:
-  Apps developed:
+  #Research:
+  Software:
     - MALDIViz: "http://kishorejagadeesan.com/MALDIViz/"
     - PrAnaViz: "https://pranaviz.github.io/"
   Research: "research"
   Publications: "publications"
-  More: "more"
+  #More: "more"
   #Other:
   #  - Aeon Charitable Trust:
   #Home: ""
