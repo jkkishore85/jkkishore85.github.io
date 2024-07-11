@@ -5,16 +5,30 @@ project:
 website:
   title: "Kishore Kumar Jagadeesan"
   navbar:
+    tools:
+      - icon: github
+        href: https://github.com/jkkishore85
+      - icon: linkedin
+        href: https://www.linkedin.com/in/jkishore/
+      - icon: twitter
+        href: https://x.com/kishorejag
+      - icon: send-fill
+        href: mailto:jkkishore85@gmail.com
+        
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - posts.qmd
-      - courses.qmd
-      - tutorials.qmd
+      - href: about.qmd
+        text: About
+      - href: posts.qmd
+        text: Posts
+      - href: courses.qmd
+        text: Courses
+      - href: tutorials.qmd
+        text: Tutorials
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
     page-layout: full
