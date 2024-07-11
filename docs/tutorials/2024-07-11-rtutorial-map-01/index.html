@@ -9,7 +9,7 @@
 <meta name="author" content="Kishore Kumar Jagadeesan">
 <meta name="dcterms.date" content="2024-07-11">
 
-<title>Kishore Kumar Jagadeesan - R Tutorial - Maps</title>
+<title>Kishore Kumar Jagadeesan - Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and leaflet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,6 +102,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
+<script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script>
+
+<link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
+<script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script>
+
+<script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
+<link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
+<script src="../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
+
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -159,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-right">
-      <h1 class="title">R Tutorial - Maps</h1>
+      <h1 class="title">Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and leaflet</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">R Tutorial</div>
@@ -200,12 +220,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#creating-interactive-maps-with-r-a-beginners-guide-using-ggplot2-and-leaflet" id="toc-creating-interactive-maps-with-r-a-beginners-guide-using-ggplot2-and-leaflet" class="nav-link active" data-scroll-target="#creating-interactive-maps-with-r-a-beginners-guide-using-ggplot2-and-leaflet">Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and Leaflet</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#creating-a-static-map-with-ggplot2" id="toc-creating-a-static-map-with-ggplot2" class="nav-link" data-scroll-target="#creating-a-static-map-with-ggplot2">Creating a Static Map with ggplot2</a></li>
-  </ul></li>
+  <li><a href="#creating-an-interactive-map-with-leaflet" id="toc-creating-an-interactive-map-with-leaflet" class="nav-link" data-scroll-target="#creating-an-interactive-map-with-leaflet">Creating an Interactive Map with Leaflet</a></li>
+  <li><a href="#additional-customizations" id="toc-additional-customizations" class="nav-link" data-scroll-target="#additional-customizations">Additional Customizations</a></li>
+  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs">FAQs</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul>
 </nav>
 </nav>
@@ -220,10 +242,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="creating-interactive-maps-with-r-a-beginners-guide-using-ggplot2-and-leaflet" class="level1">
-<h1>Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and Leaflet</h1>
-<div class="alert alert-dismissible alert-success">
-<p><strong>TL;DR</strong> In this tutorial, you’ll learn how to create static maps using <code>ggplot2</code> and interactive maps using <code>leaflet</code> in R. We’ll cover the basics, provide code examples, and include tips and troubleshooting advice. By the end, you’ll be able to create customized maps to visualize geographic data effectively.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="TL;DR">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TL;DR
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this tutorial, you’ll learn how to create static maps using <code>ggplot2</code> and interactive maps using <code>leaflet</code> in R. We’ll cover the basics, provide code examples, and include tips and troubleshooting advice. By the end, you’ll be able to create customized maps to visualize geographic data effectively.</p>
+</div>
 </div>
 <p>Welcome to this step-by-step tutorial where you’ll learn how to create beautiful and interactive maps using R. We’ll be using two powerful R packages: <code>ggplot2</code> for static maps and <code>leaflet</code> for interactive maps. Whether you’re a beginner or looking to refine your mapping skills, this guide will walk you through the basics and provide some handy tips and tricks along the way.</p>
 <section id="introduction" class="level2">
@@ -233,55 +263,676 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create a static map using <code>ggplot2</code>.</li>
 <li>Create an interactive map using <code>leaflet</code>.</li>
 </ol>
-<div class="card border-info mb-3">
-<p><strong>When to Use Which:</strong> - <strong>ggplot2</strong>: Ideal for static visualizations and publication-quality maps. - <strong>leaflet</strong>: Perfect for interactive and dynamic maps that engage users.</p>
-</div>
 <p>By the end of this guide, you will have a good understanding of how to create and customize maps in R.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="When to Use Which">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+When to Use Which
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>ggplot2</strong>: Ideal for static visualizations and publication-quality maps.</li>
+<li><strong>leaflet</strong>: Perfect for interactive and dynamic maps that engage users.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>Ensure you have R and RStudio installed on your computer. You will also need to install the necessary packages.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"leaflet"</span>, <span class="st">"maps"</span>, <span class="st">"htmlwidgets"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"magrittr"</span>,  <span class="st">"sf"</span>, <span class="st">"leaflet"</span>, <span class="st">"rnaturalearth"</span>, <span class="st">"rnaturalearthdata"</span>, <span class="st">"ggspatial"</span>, <span class="st">"ggrepel"</span>, <span class="st">"htmlwidgets"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="creating-a-static-map-with-ggplot2" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-static-map-with-ggplot2">Creating a Static Map with ggplot2</h2>
 <section id="step-1-load-the-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-load-the-libraries">Step 1: Load the Libraries</h3>
 <p>First, load the required libraries.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(maps)  <span class="co"># Contains geographic data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1"></a><span class="fu">library</span>(ggplot2)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2"></a><span class="fu">library</span>(magrittr)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3"></a><span class="fu">library</span>(rnaturalearth)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4">4</button><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4"></a><span class="fu">library</span>(rnaturalearthdata)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5">5</button><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5"></a><span class="fu">library</span>(sf)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Load the <code>ggplot2</code> package for data visualization.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="2">Load the <code>magrittr</code> package for pipe operations.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="3">Load the <code>rnaturalearth</code> package to access natural earth map data.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="4">Load the <code>rnaturalearthdata</code> package for additional natural earth data.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="5">Load the <code>sf</code> package for handling spatial data.</span>
+</dd>
+</dl>
+</div>
+</div>
 </section>
 <section id="step-2-load-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="step-2-load-the-data">Step 2: Load the Data</h3>
-<p>For this tutorial, we’ll use the built-in maps package which contains data for various maps, including world maps.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>world_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">"world"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For this tutorial, we’ll use the <code>rnaturalearth</code> package, which provides natural earth vector map data in various scales. We’ll load world map data using this package.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1"></a>world_map <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">Loads the world map data at a <code>medium</code> scale and returns it as an <code>sf</code> (simple features) object.</span>
+</dd>
+</dl>
+</div>
+</div>
 </section>
 <section id="step-3-create-the-map" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-create-the-map">Step 3: Create the Map</h3>
-<p>We’ll use ggplot2 to plot the world map.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(world_map, <span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_polygon</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"World Map"</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="card border-info mb-3">
-<p><strong><em>Explanation</em></strong> - aes(x = long, y = lat, group = group): This sets the aesthetics for the map, mapping longitude and latitude to the x and y axes. - geom_polygon(): This draws the polygons that make up the countries. - theme_minimal(): This applies a minimal theme to the plot. - labs(): This adds titles and labels to the plot.</p>
+<p>We’ll use <code>ggplot2</code> to plot the world map.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1"></a>ggplot_map <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(world_map) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2">2</button><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3">3</button><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4">4</button><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"World Map"</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="fu">gray</span>(.<span class="dv">5</span>), </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5">5</button><span id="annotated-cell-4-7" class="code-annotation-target"><a href="#annotated-cell-4-7"></a>                                    <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="fl">0.5</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="6">6</button><span id="annotated-cell-4-8" class="code-annotation-target"><a href="#annotated-cell-4-8"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"aliceblue"</span>))</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="7">7</button><span id="annotated-cell-4-9" class="code-annotation-target"><a href="#annotated-cell-4-9"></a>ggplot_map</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">Create a <code>ggplot</code> object using world_map data.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="2">Plot the geographic features using <code>geom_sf</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="3">Apply a minimal theme to the plot.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="4">Add title and axis labels.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="7" data-code-annotation="5">Customize the major grid lines.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="8" data-code-annotation="6">Set the background colour to <code>aliceblue</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="9" data-code-annotation="7">Display the map.</span>
+</dd>
+</dl>
 </div>
-
-
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/ggplot_map01-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-save-the-map" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-save-the-map">Step 4: Save the Map</h3>
+<p>Once the final map is prepared, it can be conveniently saved in various formats using the <code>ggsave()</code> function. The formats include the widely used PNG (a raster bitmap) and PDF (vector graphics), with the ability to control the size and resolution of the output. In this case, we are saving a PDF version of the map, which maintains the highest quality, and a PNG version for web usage</p>
+<div class="sourceCode" id="annotated-cell-5"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"ggplot_map.png"</span>, </span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2"></a>       <span class="at">plot=</span> ggplot_map, </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1">1</button><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3"></a>       <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">8</span>, <span class="at">dpi =</span> <span class="st">"screen"</span>)</span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"ggplot_map.pdf"</span>, </span>
+<span id="annotated-cell-5-5"><a href="#annotated-cell-5-5"></a>       <span class="at">plot=</span> ggplot_map, </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2">2</button><span id="annotated-cell-5-6" class="code-annotation-target"><a href="#annotated-cell-5-6"></a>       <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">8</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="1">Save map as a <code>PNG</code> file with <code>screen</code> resolution.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="6" data-code-annotation="2">Save map as a <code>PDF</code> file with <code>300</code> dpi resolution</span>
+</dd>
+</dl>
+<div class="callout callout-style-default callout-tip callout-titled" title="ggsave()">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ggsave()
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you’re creating a <code>PDF</code> for web use, a <code>dpi</code> of <code>72</code> is usually sufficient. If you’re creating a <code>PDF</code> for print, a <code>dpi</code> of <code>300</code> or higher is recommended. If you’re not sure what <code>dpi</code> to use, it’s best to check with your printer or the specifications of the website where you plan to upload the <code>PDF.</code></p>
+</div>
+</div>
+</section>
+<section id="customizing-the-static-map" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-the-static-map">Customizing the Static Map</h3>
+<section id="adding-additional-layers-an-example-with-points" class="level4">
+<h4 class="anchored" data-anchor-id="adding-additional-layers-an-example-with-points">Adding additional layers: An Example with Points</h4>
+<p>To make your static map more informative and visually appealing, you can add additional layers such as points representing specific locations. Here’s how to do it step-by-step.</p>
+<section id="step-1-create-a-data-frame-with-location-data" class="level5">
+<h5 class="anchored" data-anchor-id="step-1-create-a-data-frame-with-location-data">Step 1: Create a Data Frame with Location Data</h5>
+<p>First, create a data frame containing the locations you want to plot on the map.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1">1</button><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2">2</button><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Bath"</span>,<span class="st">"Keynsham"</span>, <span class="st">"Bristol"</span>, <span class="st">"Chippenham"</span>, <span class="st">"Trowbridge"</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3">3</button><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3"></a>  <span class="at">latitude =</span> <span class="fu">c</span>(<span class="fl">51.380001</span>, <span class="fl">51.41505900</span>, <span class="fl">51.45451300</span>, <span class="fl">51.45805800</span>, <span class="fl">51.31966400</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="4">4</button><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4"></a>  <span class="at">longitude =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.360000</span>, <span class="sc">-</span><span class="fl">2.50252600</span>, <span class="sc">-</span><span class="fl">2.58791000</span>, <span class="sc">-</span><span class="fl">2.11607390</span>, <span class="sc">-</span><span class="fl">2.20885300</span>))</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="5">5</button><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5"></a><span class="fu">head</span>(sites)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="1" data-code-annotation="1">Create a data frame named sites.</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="2">Define the city column with city names.</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="3">Define the latitude column with the corresponding latitudes.</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="4">Define the longitude column with the corresponding longitudes.</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="5">Display the <code>sites</code> data frame.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        city latitude longitude
+1       Bath 51.38000 -2.360000
+2   Keynsham 51.41506 -2.502526
+3    Bristol 51.45451 -2.587910
+4 Chippenham 51.45806 -2.116074
+5 Trowbridge 51.31966 -2.208853</code></pre>
+</div>
+</div>
+</section>
+<section id="step-2-plot-the-map-with-additional-layers" class="level5">
+<h5 class="anchored" data-anchor-id="step-2-plot-the-map-with-additional-layers">Step 2: Plot the Map with Additional Layers</h5>
+<p>Next, use <code>ggplot2</code> to create a map with the world map data and add points from the sites data frame.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1">1</button><span id="annotated-cell-7-1" class="code-annotation-target"><a href="#annotated-cell-7-1"></a>ggplot_map <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(world_map) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2">2</button><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3">3</button><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">data =</span> sites, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> longitude, <span class="at">y =</span> latitude), <span class="at">size =</span> <span class="dv">2</span>, <span class="at">shape =</span> <span class="dv">23</span>, <span class="at">fill =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="4">4</button><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="5">5</button><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"My Map"</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="6">6</button><span id="annotated-cell-7-6" class="code-annotation-target"><a href="#annotated-cell-7-6"></a>  ggplot2<span class="sc">::</span><span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.6</span>, <span class="sc">-</span><span class="fl">1.5</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">50.5</span>, <span class="dv">52</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-7-7"><a href="#annotated-cell-7-7"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="annotated-cell-7-8"><a href="#annotated-cell-7-8"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="fu">gray</span>(.<span class="dv">5</span>), </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="7">7</button><span id="annotated-cell-7-9" class="code-annotation-target"><a href="#annotated-cell-7-9"></a>                                    <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="fl">0.5</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="8">8</button><span id="annotated-cell-7-10" class="code-annotation-target"><a href="#annotated-cell-7-10"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"aliceblue"</span>))</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="9">9</button><span id="annotated-cell-7-11" class="code-annotation-target"><a href="#annotated-cell-7-11"></a>ggplot_map</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="1" data-code-annotation="1">Create a <code>ggplot</code> object using world_map data.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="2">Plot the geographic features using <code>geom_sf</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="3">Add points from sites data with longitude and latitude, customized size, shape, and fill colour.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="4">Apply a minimal theme to the plot.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="5">Add title and axis labels.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="6" data-code-annotation="6">Set the spatial coordinates to focus.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="9" data-code-annotation="7">Customize the major grid lines.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="10" data-code-annotation="8">Set the background colour to <code>aliceblue</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="11" data-code-annotation="9">Display the map.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/ggplot_map02-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>By following these steps, you can add various layers to your static maps, enhancing the visualization with additional data points and custom styling.</p>
 </section>
 </section>
+</section>
+</section>
+<section id="creating-an-interactive-map-with-leaflet" class="level2">
+<h2 class="anchored" data-anchor-id="creating-an-interactive-map-with-leaflet">Creating an Interactive Map with Leaflet</h2>
+<section id="step-1-load-the-libraries-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-load-the-libraries-1">Step 1: Load the Libraries</h3>
+<p>Load the <code>leaflet</code> library</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1"></a><span class="fu">library</span>(leaflet)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="1" data-code-annotation="1">Load the <code>leaflet</code> package for interactive maps.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="step-2-create-the-map" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-create-the-map">Step 2: Create the Map</h3>
+<p>We’ll create an interactive map centered on a specific location.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-1" class="code-annotation-target"><a href="#annotated-cell-9-1"></a>leaflet_map <span class="ot">&lt;-</span> leaflet<span class="sc">::</span><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2">2</button><span id="annotated-cell-9-2" class="code-annotation-target"><a href="#annotated-cell-9-2"></a>  leaflet<span class="sc">::</span><span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="3">3</button><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3"></a>  leaflet<span class="sc">::</span><span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">0.09</span>, <span class="at">lat =</span> <span class="fl">51.505</span>, <span class="at">popup =</span> <span class="st">"Hello, London!"</span>)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="4">4</button><span id="annotated-cell-9-4" class="code-annotation-target"><a href="#annotated-cell-9-4"></a>leaflet_map</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="1" data-code-annotation="1">Initialize a <code>leaflet</code> map object.</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="2" data-code-annotation="2">Add default <code>OpenStreetMap</code> tiles to the map.</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="3" data-code-annotation="3">Add a marker at the specified longitude and latitude with a popup message.</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="4" data-code-annotation="4">Display the map.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-93a270cda7b69f44085e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-93a270cda7b69f44085e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[51.505,-0.09,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Hello, London!",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.505,51.505],"lng":[-0.09,-0.09]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Explore Different Basemaps">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Explore Different Basemaps
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Change the basemap using <code>addProviderTiles()</code> function, e.g., <code>addProviderTiles(providers$Stamen.Toner)</code></p>
+</div>
+</div>
+</section>
+<section id="step-3-customize-the-map" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-customize-the-map">Step 3: Customize the Map</h3>
+<p>Let’s add more features, such as multiple markers and custom popups.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-1" class="code-annotation-target"><a href="#annotated-cell-10-1"></a>leaflet_map <span class="ot">&lt;-</span> leaflet<span class="sc">::</span><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="2">2</button><span id="annotated-cell-10-2" class="code-annotation-target"><a href="#annotated-cell-10-2"></a>  leaflet<span class="sc">::</span><span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="3">3</button><span id="annotated-cell-10-3" class="code-annotation-target"><a href="#annotated-cell-10-3"></a>  leaflet<span class="sc">::</span><span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.09</span>, <span class="sc">-</span><span class="fl">0.1</span>), <span class="at">lat =</span> <span class="fu">c</span>(<span class="fl">51.505</span>, <span class="fl">51.51</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="4">4</button><span id="annotated-cell-10-4" class="code-annotation-target"><a href="#annotated-cell-10-4"></a>             <span class="at">popup =</span> <span class="fu">c</span>(<span class="st">"Hello, London!"</span>, <span class="st">"Another Location"</span>))</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="5">5</button><span id="annotated-cell-10-5" class="code-annotation-target"><a href="#annotated-cell-10-5"></a>leaflet_map</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="1" data-code-annotation="1">Initialize a <code>leaflet</code> map object.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="2" data-code-annotation="2">Add default <code>OpenStreetMap</code> tiles to the map.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="3" data-code-annotation="3">Add multiple markers at specified longitudes and latitudes.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="4" data-code-annotation="4">Add custom popup messages for each marker.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="5" data-code-annotation="5">Display the map.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-d70d7764f8169107aefc" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d70d7764f8169107aefc">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[51.505,51.51],[-0.09,-0.1],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Hello, London!","Another Location"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.505,51.51],"lng":[-0.1,-0.09]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-customizations" class="level2">
+<h2 class="anchored" data-anchor-id="additional-customizations">Additional Customizations</h2>
+<section id="advanced-ggplot2-features" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-ggplot2-features">Advanced ggplot2 Features</h3>
+<p>To enhance your static maps further, you can customize themes, add annotations, and use scale transformations. These advanced features can make your map more informative and visually appealing.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="1">1</button><span id="annotated-cell-11-1" class="code-annotation-target"><a href="#annotated-cell-11-1"></a><span class="fu">library</span>(ggspatial)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="2">2</button><span id="annotated-cell-11-2" class="code-annotation-target"><a href="#annotated-cell-11-2"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="annotated-cell-11-3"><a href="#annotated-cell-11-3"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="3">3</button><span id="annotated-cell-11-4" class="code-annotation-target"><a href="#annotated-cell-11-4"></a>ggplot_map <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(world_map) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="4">4</button><span id="annotated-cell-11-5" class="code-annotation-target"><a href="#annotated-cell-11-5"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="5">5</button><span id="annotated-cell-11-6" class="code-annotation-target"><a href="#annotated-cell-11-6"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_point</span>(<span class="at">data =</span> sites, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> longitude, <span class="at">y =</span> latitude), <span class="at">size =</span> <span class="dv">2</span>, <span class="at">shape =</span> <span class="dv">23</span>, <span class="at">fill =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-11-7"><a href="#annotated-cell-11-7"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_text_repel</span> (<span class="at">data =</span>  sites,</span>
+<span id="annotated-cell-11-8"><a href="#annotated-cell-11-8"></a>            ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> longitude, <span class="at">y =</span> latitude,</span>
+<span id="annotated-cell-11-9"><a href="#annotated-cell-11-9"></a>                         <span class="at">label=</span> city), </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="6">6</button><span id="annotated-cell-11-10" class="code-annotation-target"><a href="#annotated-cell-11-10"></a>            <span class="at">size =</span> <span class="dv">4</span> ) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="7">7</button><span id="annotated-cell-11-11" class="code-annotation-target"><a href="#annotated-cell-11-11"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="8">8</button><span id="annotated-cell-11-12" class="code-annotation-target"><a href="#annotated-cell-11-12"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"My Map"</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>) <span class="sc">+</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="9">9</button><span id="annotated-cell-11-13" class="code-annotation-target"><a href="#annotated-cell-11-13"></a>  ggplot2<span class="sc">::</span><span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.6</span>, <span class="sc">-</span><span class="fl">1.5</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">50.5</span>, <span class="dv">52</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-11-14"><a href="#annotated-cell-11-14"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="annotated-cell-11-15"><a href="#annotated-cell-11-15"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="fu">gray</span>(.<span class="dv">5</span>), </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="10">10</button><span id="annotated-cell-11-16" class="code-annotation-target"><a href="#annotated-cell-11-16"></a>                                    <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="fl">0.5</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="11">11</button><span id="annotated-cell-11-17" class="code-annotation-target"><a href="#annotated-cell-11-17"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"aliceblue"</span>)) <span class="sc">+</span></span>
+<span id="annotated-cell-11-18"><a href="#annotated-cell-11-18"></a>  ggspatial<span class="sc">::</span><span class="fu">annotation_north_arrow</span>(</span>
+<span id="annotated-cell-11-19"><a href="#annotated-cell-11-19"></a>     <span class="at">location =</span> <span class="st">"tl"</span>,</span>
+<span id="annotated-cell-11-20"><a href="#annotated-cell-11-20"></a>     <span class="at">pad_x =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"in"</span>),</span>
+<span id="annotated-cell-11-21"><a href="#annotated-cell-11-21"></a>     <span class="at">pad_y =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"in"</span>),</span>
+<span id="annotated-cell-11-22"><a href="#annotated-cell-11-22"></a>     <span class="at">style =</span> ggspatial<span class="sc">::</span><span class="fu">north_arrow_fancy_orienteering</span>(</span>
+<span id="annotated-cell-11-23"><a href="#annotated-cell-11-23"></a>       <span class="at">line_col =</span> <span class="st">"black"</span>,</span>
+<span id="annotated-cell-11-24"><a href="#annotated-cell-11-24"></a>       <span class="at">text_size =</span> <span class="dv">12</span>,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="12">12</button><span id="annotated-cell-11-25" class="code-annotation-target"><a href="#annotated-cell-11-25"></a>       <span class="at">text_col =</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
+<span id="annotated-cell-11-26"><a href="#annotated-cell-11-26"></a>  ggspatial<span class="sc">::</span><span class="fu">annotation_scale</span>(</span>
+<span id="annotated-cell-11-27"><a href="#annotated-cell-11-27"></a>    <span class="at">location =</span> <span class="st">"br"</span>,</span>
+<span id="annotated-cell-11-28"><a href="#annotated-cell-11-28"></a>    <span class="at">width_hint =</span> <span class="fl">0.3</span>,</span>
+<span id="annotated-cell-11-29"><a href="#annotated-cell-11-29"></a>    <span class="at">text_cex =</span> <span class="fl">0.5</span>,</span>
+<span id="annotated-cell-11-30"><a href="#annotated-cell-11-30"></a>    <span class="at">pad_x =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="13">13</button><span id="annotated-cell-11-31" class="code-annotation-target"><a href="#annotated-cell-11-31"></a>    <span class="at">pad_y =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>))</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="14">14</button><span id="annotated-cell-11-32" class="code-annotation-target"><a href="#annotated-cell-11-32"></a>ggplot_map</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="1" data-code-annotation="1">Load the <code>ggspatial</code> package for spatial annotations.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="2" data-code-annotation="2">Load the <code>ggrepel</code> package for repelling text labels.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="4" data-code-annotation="3">Create a <code>ggplot</code> object using <code>world_map</code> data.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="5" data-code-annotation="4">Plot the geographic features using <code>geom_sf</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="6" data-code-annotation="5">Add points from sites data with longitude and latitude, customized size, shape, and fill colour.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="10" data-code-annotation="6">Add repelled text labels for city names using <code>ggrepel</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="11" data-code-annotation="7">Apply a minimal theme to the plot.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="12" data-code-annotation="8">Add title and axis labels.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="13" data-code-annotation="9">Set the spatial coordinates to focus.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="10">10</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="16" data-code-annotation="10">Customize the major grid lines.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="11">11</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="17" data-code-annotation="11">Set the background colour to <code>aliceblue</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="12">12</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="25" data-code-annotation="12">Add a north arrow annotation at the top left of the plot.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="13">13</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="31" data-code-annotation="13">Add a scale bar annotation at the bottom right of the plot.</span>
+</dd>
+<dt data-target-cell="annotated-cell-11" data-target-annotation="14">14</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="32" data-code-annotation="14">Display the map.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/ggplot_map03-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="advanced-leaflet-features" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-leaflet-features">Advanced Leaflet Features</h3>
+<p>For interactive maps, <code>leaflet</code> offers advanced features that allow you to add layers, custom controls, and integrate with other web technologies.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Polygons and Circles">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Polygons and Circles
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>addPolygons()</code> and <code>addCircles()</code> to highlight specific areas on your map.</p>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="1">1</button><span id="annotated-cell-12-1" class="code-annotation-target"><a href="#annotated-cell-12-1"></a>leaflet_map <span class="ot">&lt;-</span> leaflet<span class="sc">::</span><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="2">2</button><span id="annotated-cell-12-2" class="code-annotation-target"><a href="#annotated-cell-12-2"></a>  leaflet<span class="sc">::</span><span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="3">3</button><span id="annotated-cell-12-3" class="code-annotation-target"><a href="#annotated-cell-12-3"></a>  leaflet<span class="sc">::</span><span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">0.09</span>, <span class="at">lat =</span> <span class="fl">51.505</span>, <span class="at">popup =</span> <span class="st">"Hello, London!"</span>) <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="4">4</button><span id="annotated-cell-12-4" class="code-annotation-target"><a href="#annotated-cell-12-4"></a>  leaflet<span class="sc">::</span><span class="fu">addCircles</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">lat =</span> <span class="fl">51.51</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">radius =</span> <span class="dv">50</span>,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="5">5</button><span id="annotated-cell-12-5" class="code-annotation-target"><a href="#annotated-cell-12-5"></a>             <span class="at">popup =</span> <span class="st">"Circle around another location"</span>)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="6">6</button><span id="annotated-cell-12-6" class="code-annotation-target"><a href="#annotated-cell-12-6"></a>leaflet_map</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="1" data-code-annotation="1">Initialize a <code>leaflet</code> map object.</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="2" data-code-annotation="2">Add default <code>OpenStreetMap</code> tiles to the map.</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="3" data-code-annotation="3">Add a marker at the specified longitude and latitude with a popup message.</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="4" data-code-annotation="4">Add a circle at the specified longitude and latitude with a specified weight and radius.</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="5" data-code-annotation="5">Add a popup message for the circle.</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="6" data-code-annotation="6">Display the map.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-ace9e55abb6735d505c2" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ace9e55abb6735d505c2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[51.505,-0.09,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Hello, London!",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircles","args":[51.51,-0.1,50,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":1,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},"Circle around another location",null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"limits":{"lat":[51.505,51.51],"lng":[-0.1,-0.09]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>These advanced features in ggplot2 and leaflet enable you to create detailed, informative, and visually appealing maps, whether they are static or interactive. By leveraging these tools, you can effectively communicate geographic data to your audience.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common Mistakes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common Mistakes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When creating maps in R, there are a few common mistakes that can lead to errors or unexpected results. Here are some tips to help you avoid these pitfalls:</p>
+<ul>
+<li><strong><em>Wrong Coordinates:</em></strong> Ensure your longitude and latitude values are correct; otherwise, your markers will not appear where expected.</li>
+<li><strong><em>Missing Libraries:</em></strong> Always load the necessary libraries before running your code.</li>
+<li><strong><em>Incorrect Data Types:</em></strong> Make sure your longitude and latitude columns are numeric. If they are factors or characters, convert them using as.numeric().</li>
+<li><strong><em>Mismatched Coordinate Reference Systems (CRS):</em></strong> Ensure your spatial data and map layers use the same CRS to avoid misalignment.</li>
+<li><strong><em>Overlapping Layers:</em></strong> Be careful with the order of layers in ggplot2. Layers added later will be on top of earlier ones, which might obscure important data.</li>
+<li><strong><em>Improper Aesthetics Mapping:</em></strong> Double-check that the <code>aes()</code> function correctly maps your data columns to aesthetics in <code>ggplot2</code>.</li>
+<li><strong><em>Forgetting to Print the Plot:</em></strong> In scripts or R Markdown documents, ensure you explicitly print the <code>ggplot</code> object to render the plot.</li>
+<li><strong><em>Large Data Sets:</em></strong> For very large spatial data sets, rendering can be slow. Consider simplifying your data or using more efficient packages like <code>sf</code>.</li>
+<li><strong><em>Incorrect File Paths:</em></strong> When loading spatial data from files, ensure the file paths are correct and the files are accessible.</li>
+<li><strong><em>Not Saving Plots:</em></strong> If you want to save your plots, use functions like <code>ggsave()</code> for <code>ggplot2</code> maps and <code>htmlwidgets::saveWidget()</code> for <code>leaflet</code> maps.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Troubleshooting">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Troubleshooting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When things go wrong, here are some troubleshooting tips to help you diagnose and fix common issues:</p>
+<ul>
+<li><strong><em>Error: Object not found:</em></strong> Ensure all objects (e.g., data frames, variables) are defined in your environment.</li>
+<li><strong><em>Map not displaying:</em></strong> Check your longitude and latitude values and ensure your map container is correctly set up if embedding in a Shiny app or R Markdown document.</li>
+<li><strong><em>Incorrect CRS:</em></strong> If your spatial data doesn’t align, check and transform CRS using functions like <code>st_transform()</code> from the <code>sf</code> package.</li>
+<li><strong><em>Slow Performance:</em></strong> If rendering is slow, consider reducing the complexity of your spatial data, using faster algorithms, or rendering smaller sections of the map.</li>
+<li><strong><em>Layer Ordering Issues:</em></strong> If some layers are hidden, reorder your ggplot2 layers to ensure that important data is not obscured.</li>
+<li><strong><em>Library Conflicts:</em></strong> Sometimes, functions from different libraries can conflict. Ensure you are calling functions with the correct namespace (e.g., <code>ggplot2::geom_point()</code>).</li>
+<li><strong><em>Missing Data:</em></strong> Check for <code>NA</code> values in your data, especially in critical columns like longitude and latitude. Handle missing data appropriately.</li>
+<li><strong><em>Plot Size:</em></strong> If your plot appears squished or improperly scaled, adjust the plot dimensions using <code>ggsave()</code> or <code>fig.width</code> and <code>fig.height</code> in R Markdown.</li>
+<li><strong><em>Browser Compatibility:</em></strong> For <code>leaflet</code> maps, ensure you are using a compatible web browser, and try refreshing the page if the map does not load.</li>
+<li><strong><em>Dependency Issues:</em></strong> Make sure all necessary packages and their dependencies are installed and up to date. Use <code>install.packages()</code> to install missing packages.</li>
+<li><strong><em>Resource Limits:</em></strong> For interactive maps, ensure your system has sufficient resources (memory, processing power) to handle large datasets and complex visualizations.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="faqs" class="level2">
+<h2 class="anchored" data-anchor-id="faqs">FAQs</h2>
+<p>Q: Can I save my interactive map as an HTML file?</p>
+<p>A: Yes, use the <code>saveWidget()</code> function from the <code>htmlwidgets</code> package.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(htmlwidgets)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">saveWidget</span>(m, <span class="at">file =</span> <span class="st">"interactive_map.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Q: How do I add custom icons to my markers?</p>
+<p>A: You can use the <code>makeIcon()</code> function to add custom icons.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>custom_icon <span class="ot">&lt;-</span> <span class="fu">makeIcon</span>(<span class="at">iconUrl =</span> <span class="st">"path/to/icon.png"</span>, <span class="at">iconWidth =</span> <span class="dv">30</span>, <span class="at">iconHeight =</span> <span class="dv">30</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>leaflet_map <span class="ot">&lt;-</span> leaflet<span class="sc">::</span><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  leaflet<span class="sc">::</span><span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  leaflet<span class="sc">::</span><span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="sc">-</span><span class="fl">0.09</span>, <span class="at">lat =</span> <span class="fl">51.505</span>, <span class="at">icon =</span> custom_icon)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>leaflet_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Creating maps in R is a valuable skill for data visualization. With <code>ggplot2</code>, you can make static maps, and with <code>leaflet</code>, you can create interactive maps that provide a more engaging user experience. Experiment with different features and customization options to make your maps stand out. Happy mapping!</p>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://ggplot2-book.org/maps"><code>ggplot2</code></a> Documentation</li>
+<li><a href="https://rstudio.github.io/leaflet/articles/leaflet.html"><code>leaflet</code></a> for R Documentation</li>
+<li><a href="https://r-graphics.org/recipe-miscgraph-map">Maps Cookbook</a></li>
+</ul>
+
+
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kumar jagadeesan2024,
   author = {Kumar Jagadeesan, Kishore},
-  title = {R {Tutorial} - {Maps}},
+  title = {Creating {Interactive} {Maps} with {R:} {A} {Beginner’s}
+    {Guide} {Using} Ggplot2 and Leaflet},
   date = {2024-07-11},
   url = {https://jkkishore85.github.io/tutorials/2024-07-11-rtutorial-map-01/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kumar jagadeesan2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Kumar Jagadeesan, Kishore. 2024. <span>“R Tutorial - Maps.”</span> July
-11, 2024. <a href="https://jkkishore85.github.io/tutorials/2024-07-11-rtutorial-map-01/">https://jkkishore85.github.io/tutorials/2024-07-11-rtutorial-map-01/</a>.
+Kumar Jagadeesan, Kishore. 2024. <span>“Creating Interactive Maps with
+R: A Beginner’s Guide Using Ggplot2 and Leaflet.”</span> July 11, 2024.
+<a href="https://jkkishore85.github.io/tutorials/2024-07-11-rtutorial-map-01/">https://jkkishore85.github.io/tutorials/2024-07-11-rtutorial-map-01/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -364,7 +1015,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/github\.com\/jkkishore85\/jkkishore85\.github\.io");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -633,25 +1284,64 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         }
       };
     }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
           }
-        });
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
       }
   const findCites = (el) => {
     const parentEl = el.parentElement;
@@ -693,6 +1383,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2024, Kishore Kumar Jagadeesan</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This website is built with <a href="https://github.com/jkkishore85/jkkishore85.github.io" target="_blank">GitHub</a>, <a href="https://www.r-project.org/about.html" target="_blank">R Project</a> and <a href="https://quarto.org/" target="_blank">Quarto</a></p>
+</div>
+  </div>
+</footer>
 
 
 
