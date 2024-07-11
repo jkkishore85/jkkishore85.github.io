@@ -2,8 +2,8 @@
 title: "About"
 ---
 
-About this site
+-   Currently Postdoctoral Research Associate in Environmental Chemistry & Public Health Research Group , Department of Chemistry, University of Bath, UK
 
-```{r}
-1 + 1
-```
+-   PhD (Biomedical Engineering) from Lund University. My PhD thesis involved development of high-throughput mass spectrometry method to screen solid-phase extraction materials.
+
+-   During my PhD developed MALDIViz, a comprehensive informatics tool for handling dataset from the screening studies. This application can be used to do quality checks, visualizations and analysis of mass spectrometry data.
