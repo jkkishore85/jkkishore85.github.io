@@ -1,0 +1,20 @@
+[
+  {
+    "listing": "/tutorials.html",
+    "items": [
+      "/tutorials/2024-07-11-rtutorial-map-01/index.html"
+    ]
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2024-07-11-newlook/index.html"
+    ]
+  },
+  {
+    "listing": "/courses.html",
+    "items": [
+      "/courses/index.html"
+    ]
+  }
+]

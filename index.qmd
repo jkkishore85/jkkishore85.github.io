@@ -1,11 +1,29 @@
 ---
-title: "mysite"
+title: ""
+image: images/kishore_round.png
+toc: false
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 14em
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/jkishore/
+      target: _blank
+    - icon: twitter
+      text: X
+      href: https://x.com/kishorejag
+      target: _blank
+    - icon: github
+      text: GitHub
+      href: https://github.com/jkkishore85
+      target: _blank
+    - icon: envelope
+      text: Email
+      href: mailto:jkkishore85@gmail.com
 ---
 
-This is a Quarto website.
+<!-- ::: {.small-text} -->
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+Hello! I’m Kishore Kumar Jagadeesan, a Research Associate with a passion for environmental science, water quality, and public health. Currently, I’m \@ the [University of Bath](https://researchportal.bath.ac.uk/en/persons/kishore-jagadeesan) , where I excel in creating research tools for statistical analysis and data visualization across diverse disciplines. Feel free to explore my website to learn more!

@@ -1,16 +1,79 @@
 [
   {
+    "objectID": "tutorials.html",
+    "href": "tutorials.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "R Tutorial - Maps\n\n\n\nR\n\n\nR Tutorial\n\n\nMaps\n\n\nggplot\n\n\nleaflet\n\n\ntidyverse\n\n\nenvironmental monitoring\n\n\n\n\n\n\n\nKishore Kumar Jagadeesan\n\n\nJul 11, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "New Look\n\n\n\nQuarto\n\n\nR\n\n\n\nNew look for the website\n\n\n\nKishore Kumar Jagadeesan\n\n\nJul 11, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "mysite",
+    "title": "Kishore Kumar Jagadeesan",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Hello! I’m Kishore Kumar Jagadeesan, a Research Associate with a passion for environmental science, water quality, and public health. Currently, I’m @ the University of Bath , where I excel in creating research tools for statistical analysis and data visualization across diverse disciplines. Feel free to explore my website to learn more!"
+  },
+  {
+    "objectID": "courses/index.html",
+    "href": "courses/index.html",
+    "title": "Data Analysis and Visualization in R",
+    "section": "",
+    "text": "Course description\nIn today’s data-driven era, mastering data visualization is essential. This course equips you with practical skills to transform raw data into meaningful visual stories that drive understanding and decision-making. Whether you’re a data enthusiast or a professional looking to enhance your visualization prowess, this course offers invaluable insights and hands-on practice.\n\nLearning Objectives:\nBy the end of this course, participants will:\n\nIdentify appropriate visualization types for different datasets and audiences.\nPrepare data through cleaning, exploration, and formatting using R.\nCreate impactful, accessible, and visually appealing visualizations using ggplot2 and its extensions.\nDevelop proficiency in coding from scratch for data visualization tasks.\n\n\n\nCourse Highlights:\n\nUnderstanding Data Visualization: Learn to identify the most suitable visualization types for your data and audience.\nData Preparation: Master techniques to clean, explore, and format data for visualization using R.\nBuilding Visualizations: Utilize R, including ggplot2 and its extensions, to craft impactful and visually engaging charts.\nHands-on Practice: From coding essentials to advanced techniques, gain practical insights through interactive learning.\n\n\n\n\n\nWhen is this taught?\nCourse Link: Course website\nDates: May 14th and 15th, 2022\nAudience: Members of the Marie Curie Alumni Association - India Chapter\nSupported By: The Carpentries\nFunded By: Marie Curie Alumni Association\nThis course combined theoretical foundations with hands-on practice, empowering participants to leverage data visualization for impactful communication and decision-making. Stay tuned for future opportunities to advance your skills in data analysis and visualization with us!"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Currently Postdoctoral Research Associate in Environmental Chemistry & Public Health Research Group , Department of Chemistry, University of Bath, UK\nPhD (Biomedical Engineering) from Lund University. My PhD thesis involved development of high-throughput mass spectrometry method to screen solid-phase extraction materials.\nDuring my PhD developed MALDIViz, a comprehensive informatics tool for handling dataset from the screening studies. This application can be used to do quality checks, visualizations and analysis of mass spectrometry data."
+  },
+  {
+    "objectID": "courses.html",
+    "href": "courses.html",
+    "title": "Courses",
+    "section": "",
+    "text": "Data Analysis and Visualization in R\n\n\n\ndata-visualization\n\n\nR\n\n\nggplot\n\n\ntidyverse\n\n\n\na two day hands-on course covering the basic principles for effective communication through data visuallisation!\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2024-07-11-newlook/index.html",
+    "href": "posts/2024-07-11-newlook/index.html",
+    "title": "New Look",
+    "section": "",
+    "text": "CitationBibTeX citation:@online{kumar jagadeesan2024,\n  author = {Kumar Jagadeesan, Kishore},\n  title = {New {Look}},\n  date = {2024-07-11},\n  url = {https://jkkishore85.github.io/mysite/posts/2024-07-11-newlook/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nKumar Jagadeesan, Kishore. 2024. “New Look.” July 11, 2024.\nhttps://jkkishore85.github.io/mysite/posts/2024-07-11-newlook/."
+  },
+  {
+    "objectID": "tutorials/2024-07-11-rtutorial-map-01/index.html",
+    "href": "tutorials/2024-07-11-rtutorial-map-01/index.html",
+    "title": "R Tutorial - Maps",
+    "section": "",
+    "text": "TL;DR In this tutorial, you’ll learn how to create static maps using ggplot2 and interactive maps using leaflet in R. We’ll cover the basics, provide code examples, and include tips and troubleshooting advice. By the end, you’ll be able to create customized maps to visualize geographic data effectively.\n\nWelcome to this step-by-step tutorial where you’ll learn how to create beautiful and interactive maps using R. We’ll be using two powerful R packages: ggplot2 for static maps and leaflet for interactive maps. Whether you’re a beginner or looking to refine your mapping skills, this guide will walk you through the basics and provide some handy tips and tricks along the way.\n\n\nMapping is a crucial part of data visualization, helping to present geographic data in an easily understandable way. In this tutorial, we will:\n\nCreate a static map using ggplot2.\nCreate an interactive map using leaflet.\n\n\nWhen to Use Which: - ggplot2: Ideal for static visualizations and publication-quality maps. - leaflet: Perfect for interactive and dynamic maps that engage users.\n\nBy the end of this guide, you will have a good understanding of how to create and customize maps in R.\n\n\n\nEnsure you have R and RStudio installed on your computer. You will also need to install the necessary packages.\ninstall.packages(c(\"ggplot2\", \"leaflet\", \"maps\", \"htmlwidgets\"))\n\n\n\n\n\nFirst, load the required libraries.\nlibrary(ggplot2)\nlibrary(maps)  # Contains geographic data\n\n\n\nFor this tutorial, we’ll use the built-in maps package which contains data for various maps, including world maps.\nworld_map &lt;- map_data(\"world\")\n\n\n\nWe’ll use ggplot2 to plot the world map.\nggplot(world_map, aes(x = long, y = lat, group = group)) +\n  geom_polygon(fill = \"lightblue\", color = \"black\") +\n  theme_minimal() +\n  labs(title = \"World Map\", x = \"Longitude\", y = \"Latitude\")\n\nExplanation - aes(x = long, y = lat, group = group): This sets the aesthetics for the map, mapping longitude and latitude to the x and y axes. - geom_polygon(): This draws the polygons that make up the countries. - theme_minimal(): This applies a minimal theme to the plot. - labs(): This adds titles and labels to the plot."
+  },
+  {
+    "objectID": "tutorials/2024-07-11-rtutorial-map-01/index.html#introduction",
+    "href": "tutorials/2024-07-11-rtutorial-map-01/index.html#introduction",
+    "title": "R Tutorial - Maps",
+    "section": "",
+    "text": "Mapping is a crucial part of data visualization, helping to present geographic data in an easily understandable way. In this tutorial, we will:\n\nCreate a static map using ggplot2.\nCreate an interactive map using leaflet.\n\n\nWhen to Use Which: - ggplot2: Ideal for static visualizations and publication-quality maps. - leaflet: Perfect for interactive and dynamic maps that engage users.\n\nBy the end of this guide, you will have a good understanding of how to create and customize maps in R."
+  },
+  {
+    "objectID": "tutorials/2024-07-11-rtutorial-map-01/index.html#prerequisites",
+    "href": "tutorials/2024-07-11-rtutorial-map-01/index.html#prerequisites",
+    "title": "R Tutorial - Maps",
+    "section": "",
+    "text": "Ensure you have R and RStudio installed on your computer. You will also need to install the necessary packages.\ninstall.packages(c(\"ggplot2\", \"leaflet\", \"maps\", \"htmlwidgets\"))"
+  },
+  {
+    "objectID": "tutorials/2024-07-11-rtutorial-map-01/index.html#creating-a-static-map-with-ggplot2",
+    "href": "tutorials/2024-07-11-rtutorial-map-01/index.html#creating-a-static-map-with-ggplot2",
+    "title": "R Tutorial - Maps",
+    "section": "",
+    "text": "First, load the required libraries.\nlibrary(ggplot2)\nlibrary(maps)  # Contains geographic data\n\n\n\nFor this tutorial, we’ll use the built-in maps package which contains data for various maps, including world maps.\nworld_map &lt;- map_data(\"world\")\n\n\n\nWe’ll use ggplot2 to plot the world map.\nggplot(world_map, aes(x = long, y = lat, group = group)) +\n  geom_polygon(fill = \"lightblue\", color = \"black\") +\n  theme_minimal() +\n  labs(title = \"World Map\", x = \"Longitude\", y = \"Latitude\")\n\nExplanation - aes(x = long, y = lat, group = group): This sets the aesthetics for the map, mapping longitude and latitude to the x and y axes. - geom_polygon(): This draws the polygons that make up the countries. - theme_minimal(): This applies a minimal theme to the plot. - labs(): This adds titles and labels to the plot."
   }
 ]

@@ -1,0 +1,14 @@
+---
+title: "New Look"
+description: "New look for the website"
+author:
+  - name: Kishore Kumar Jagadeesan
+    url: https://jkkishore85.github.io
+    orcid: 0000-0003-0916-256X
+    affiliation: Research Associate, University of Bath
+date: 07-11-2024
+categories: [Quarto, R] # self-defined categories
+citation: 
+  url: https://jkkishore85.github.io/mysite/posts/2024-07-11-newlook/ 
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
