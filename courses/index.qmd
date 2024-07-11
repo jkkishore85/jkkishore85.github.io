@@ -1,0 +1,46 @@
+---
+title: "Data Analysis and Visualization in R"
+description: |
+  a two day hands-on course covering the basic principles for effective communication through data visuallisation!
+categories: [data-visualization, R, ggplot, tidyverse]
+draft: false
+---
+
+# Course description
+
+In today's data-driven era, mastering data visualization is essential. This course equips you with practical skills to transform raw data into meaningful visual stories that drive understanding and decision-making. Whether you're a data enthusiast or a professional looking to enhance your visualization prowess, this course offers invaluable insights and hands-on practice.
+
+#### Learning Objectives:
+
+By the end of this course, participants will:
+
+-   Identify appropriate visualization types for different datasets and audiences.
+
+-   Prepare data through cleaning, exploration, and formatting using R.
+
+-   Create impactful, accessible, and visually appealing visualizations using **ggplot2** and its extensions.
+
+-   Develop proficiency in coding from scratch for data visualization tasks.
+
+#### Course Highlights:
+
+-   **Understanding Data Visualization:** Learn to identify the most suitable visualization types for your data and audience.
+
+-   **Data Preparation:** Master techniques to clean, explore, and format data for visualization using R.
+
+-   **Building Visualizations:** Utilize R, including **ggplot2** and its extensions, to craft impactful and visually engaging charts.
+
+-   **Hands-on Practice:** From coding essentials to advanced techniques, gain practical insights through interactive learning.
+
+<br>
+
+# When is this taught?
+
+**Course Link:** [Course website](https://jkkishore85.github.io/2022-05-14-mcaaindia-online/){.btn target="_blank"}
+
+**Dates:** May 14th and 15th, 2022\
+**Audience:** Members of the Marie Curie Alumni Association - India Chapter\
+**Supported By:** [The Carpentries](https://carpentries.org/)\
+**Funded By:** [Marie Curie Alumni Association](https://www.mariecuriealumni.eu/)
+
+This course combined theoretical foundations with hands-on practice, empowering participants to leverage data visualization for impactful communication and decision-making. Stay tuned for future opportunities to advance your skills in data analysis and visualization with us!
