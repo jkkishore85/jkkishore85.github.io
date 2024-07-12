@@ -6,15 +6,22 @@
     ]
   },
   {
-    "listing": "/posts.html",
+    "listing": "/projects.html",
     "items": [
-      "/posts/2024-07-11-newlook/index.html"
+      "/projects/2022-01-06-prana/index.html",
+      "/projects/2017-12-01-maldiviz/index.html"
     ]
   },
   {
     "listing": "/courses.html",
     "items": [
-      "/courses/index.html"
+      "/courses/2022-05-14-workshop-mcaaindia/index.html"
+    ]
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2024-07-11-newlook/index.html"
     ]
   }
 ]

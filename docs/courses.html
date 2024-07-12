@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -157,12 +157,16 @@ window.Quarto = {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./posts.html"> 
-<span class="menu-text">Posts</span></a>
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./courses.html" aria-current="page"> 
-<span class="menu-text">Courses</span></a>
+<span class="menu-text">Courses &amp; Workshops</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./tutorials.html"> 
@@ -185,7 +189,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data-visualization">data-visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ggplot">ggplot <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tidyverse">tidyverse <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data-visualization">data-visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ggplot">ggplot <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tidyverse">tidyverse <span class="quarto-category-count">(1)</span></div><div class="category" data-category="workshop">workshop <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -214,8 +218,8 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="data-visualization,R,ggplot,tidyverse" data-listing-file-modified-sort="1720678344355" data-listing-reading-time-sort="2" data-listing-word-count-sort="243">
-<a href="./courses/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="workshop,data-visualization,R,ggplot,tidyverse" data-listing-date-sort="1652482800000" data-listing-file-modified-sort="1720764946967" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="243">
+<a href="./courses/2022-05-14-workshop-mcaaindia/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
 <div class="card-body post-contents">
@@ -223,6 +227,9 @@ window.Quarto = {
 Data Analysis and Visualization in R
 </h5>
 <div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('workshop'); return false;">
+workshop
+</div>
 <div class="listing-category" onclick="window.quartoListingCategory('data-visualization'); return false;">
 data-visualization
 </div>
@@ -237,11 +244,14 @@ tidyverse
 </div>
 </div>
 <div class="card-text listing-description">
-<p>a two day hands-on course covering the basic principles for effective communication through data visuallisation!</p>
+<p>Two days hands-on course covering the basic principles for effective communication through data visuallisation!</p>
 </div>
-<div class="card-attribution card-text-small start">
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
-
+Kishore Kumar Jagadeesan
+</div>
+<div class="listing-date">
+May 14, 2022
 </div>
 </div>
 </div>
