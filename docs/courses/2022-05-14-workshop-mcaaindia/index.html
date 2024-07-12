@@ -6,7 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="a two day hands-on course covering the basic principles for effective communication through data visuallisation!">
+<meta name="author" content="Kishore Kumar Jagadeesan">
+<meta name="dcterms.date" content="2022-05-14">
+<meta name="description" content="Two days hands-on course covering the basic principles for effective communication through data visuallisation!">
 
 <title>Kishore Kumar Jagadeesan - Data Analysis and Visualization in R</title>
 <style>
@@ -24,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,17 +71,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Kishore Kumar Jagadeesan</span>
     </a>
   </div>
@@ -90,23 +92,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../posts.html"> 
-<span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../courses.html"> 
-<span class="menu-text">Courses</span></a>
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutorials.html"> 
+    <a class="nav-link" href="../../courses.html"> 
+<span class="menu-text">Courses &amp; Workshops</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
 </ul>
@@ -121,16 +127,17 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-page-right">
       <h1 class="title">Data Analysis and Visualization in R</h1>
                   <div>
         <div class="description">
-          <p>a two day hands-on course covering the basic principles for effective communication through data visuallisation!</p>
+          <p>Two days hands-on course covering the basic principles for effective communication through data visuallisation!</p>
         </div>
       </div>
                           <div class="quarto-categories">
+                <div class="quarto-category">workshop</div>
                 <div class="quarto-category">data-visualization</div>
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">ggplot</div>
@@ -140,9 +147,21 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta column-page-right">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Kishore Kumar Jagadeesan <a href="https://orcid.org/0000-0003-0916-256X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 14, 2022</p>
+      </div>
+    </div>
     
       
     </div>
@@ -150,19 +169,24 @@ ul.task-list li input[type="checkbox"] {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#course-description" id="toc-course-description" class="nav-link active" data-scroll-target="#course-description">Course description</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives:</a></li>
+  <li><a href="#course-highlights" id="toc-course-highlights" class="nav-link" data-scroll-target="#course-highlights">Course Highlights:</a></li>
   <li><a href="#when-is-this-taught" id="toc-when-is-this-taught" class="nav-link" data-scroll-target="#when-is-this-taught">When is this taught?</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
 
 
 
@@ -171,31 +195,29 @@ ul.task-list li input[type="checkbox"] {
 <section id="course-description" class="level1">
 <h1>Course description</h1>
 <p>In today’s data-driven era, mastering data visualization is essential. This course equips you with practical skills to transform raw data into meaningful visual stories that drive understanding and decision-making. Whether you’re a data enthusiast or a professional looking to enhance your visualization prowess, this course offers invaluable insights and hands-on practice.</p>
-<section id="learning-objectives" class="level4">
-<h4 class="anchored" data-anchor-id="learning-objectives">Learning Objectives:</h4>
+</section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives:</h1>
 <p>By the end of this course, participants will:</p>
 <ul>
-<li><p>Identify appropriate visualization types for different datasets and audiences.</p></li>
-<li><p>Prepare data through cleaning, exploration, and formatting using R.</p></li>
-<li><p>Create impactful, accessible, and visually appealing visualizations using <strong>ggplot2</strong> and its extensions.</p></li>
-<li><p>Develop proficiency in coding from scratch for data visualization tasks.</p></li>
+<li>Identify appropriate visualization types for different datasets and audiences.</li>
+<li>Prepare data through cleaning, exploration, and formatting using R.</li>
+<li>Create impactful, accessible, and visually appealing visualizations using <strong>ggplot2</strong> and its extensions.</li>
+<li>Develop proficiency in coding from scratch for data visualization tasks.</li>
 </ul>
 </section>
-<section id="course-highlights" class="level4">
-<h4 class="anchored" data-anchor-id="course-highlights">Course Highlights:</h4>
+<section id="course-highlights" class="level1">
+<h1>Course Highlights:</h1>
 <ul>
-<li><p><strong>Understanding Data Visualization:</strong> Learn to identify the most suitable visualization types for your data and audience.</p></li>
-<li><p><strong>Data Preparation:</strong> Master techniques to clean, explore, and format data for visualization using R.</p></li>
-<li><p><strong>Building Visualizations:</strong> Utilize R, including <strong>ggplot2</strong> and its extensions, to craft impactful and visually engaging charts.</p></li>
-<li><p><strong>Hands-on Practice:</strong> From coding essentials to advanced techniques, gain practical insights through interactive learning.</p></li>
+<li><strong>Understanding Data Visualization:</strong> Learn to identify the most suitable visualization types for your data and audience.</li>
+<li><strong>Data Preparation:</strong> Master techniques to clean, explore, and format data for visualization using R.</li>
+<li><strong>Building Visualizations:</strong> Utilize R, including <strong>ggplot2</strong> and its extensions, to craft impactful and visually engaging charts.</li>
+<li><strong>Hands-on Practice:</strong> From coding essentials to advanced techniques, gain practical insights through interactive learning.</li>
 </ul>
-<p><br></p>
-</section>
 </section>
 <section id="when-is-this-taught" class="level1">
 <h1>When is this taught?</h1>
-<p><strong>Course Link:</strong> <a href="https://jkkishore85.github.io/2022-05-14-mcaaindia-online/" class="btn" target="_blank">Course website</a></p>
-<p><strong>Dates:</strong> May 14th and 15th, 2022<br>
+<p><strong>Course Link:</strong> <a href="https://jkkishore85.github.io/2022-05-14-mcaaindia-online/" class="btn" target="_blank">Course website</a> <strong>Dates:</strong> May 14th and 15th, 2022<br>
 <strong>Audience:</strong> Members of the Marie Curie Alumni Association - India Chapter<br>
 <strong>Supported By:</strong> <a href="https://carpentries.org/">The Carpentries</a><br>
 <strong>Funded By:</strong> <a href="https://www.mariecuriealumni.eu/">Marie Curie Alumni Association</a></p>
@@ -204,7 +226,17 @@ ul.task-list li input[type="checkbox"] {
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kumar jagadeesan2022,
+  author = {Kumar Jagadeesan, Kishore},
+  title = {Data {Analysis} and {Visualization} in {R}},
+  date = {2022-05-14},
+  url = {https://jkkishore85.github.io/courses/2022-05-14-workshop-mcaaindia/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kumar jagadeesan2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Kumar Jagadeesan, Kishore. 2022. <span>“Data Analysis and Visualization
+in R.”</span> May 14, 2022. <a href="https://jkkishore85.github.io/courses/2022-05-14-workshop-mcaaindia/">https://jkkishore85.github.io/courses/2022-05-14-workshop-mcaaindia/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
