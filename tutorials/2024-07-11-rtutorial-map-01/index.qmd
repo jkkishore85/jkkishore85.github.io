@@ -9,8 +9,8 @@ draft: false
 format: 
   html:
     toc: true
-    toc-depth: 2
-    toc-expand: 2
+    toc-depth: 3
+    toc-expand: 3
     toc-title: On this page
     toc-location: left
     code-fold: true
@@ -28,7 +28,7 @@ In this tutorial, you'll learn how to create static maps using `ggplot2` and int
 
 Welcome to this step-by-step tutorial where you'll learn how to create beautiful and interactive maps using R. We'll be using two powerful R packages: `ggplot2` for static maps and `leaflet` for interactive maps. Whether you're a beginner or looking to refine your mapping skills, this guide will walk you through the basics and provide some handy tips and tricks along the way.
 
-## Introduction
+# Introduction
 
 Mapping is a crucial part of data visualization, helping to present geographic data in an easily understandable way. In this tutorial, we will:
 
@@ -43,16 +43,16 @@ By the end of this guide, you will have a good understanding of how to create an
   
 :::
 
-## Prerequisites
+# Prerequisites
 
 Ensure you have R and RStudio installed on your computer. You will also need to install the necessary packages.
 
 ``` r
 install.packages(c("ggplot2", "magrittr",  "sf", "leaflet", "rnaturalearth", "rnaturalearthdata", "ggspatial", "ggrepel", "htmlwidgets"))
 ```
-## Creating a Static Map with ggplot2
+# Creating a Static Map with ggplot2
 
-### Step 1: Load the Libraries
+## Step 1: Load the Libraries
 
 First, load the required libraries.
 
@@ -69,7 +69,7 @@ library(sf) # <5>
 4. Load the `rnaturalearthdata` package for additional natural earth data.
 5. Load the `sf` package for handling spatial data.
 
-### Step 2: Load the Data
+## Step 2: Load the Data
 For this tutorial, we'll use the `rnaturalearth` package, which provides natural earth vector map data in various scales. We'll load world map data using this package.
 
 ```{r world_map, warning=FALSE, message=FALSE}
@@ -77,7 +77,7 @@ world_map <- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf") #
 ```
 1. Loads the world map data at a `medium` scale and returns it as an `sf` (simple features) object.
 
-### Step 3: Create the Map
+## Step 3: Create the Map
 We'll use `ggplot2` to plot the world map.
 
 ```{r ggplot_map01, warning=FALSE, message=FALSE}
@@ -99,7 +99,7 @@ ggplot_map # <7>
 6. Set the background colour to `aliceblue`.
 7. Display the map. 
 
-### Step 4: Save the Map
+## Step 4: Save the Map
 
 Once the final map is prepared, it can be conveniently saved in various formats using the `ggsave()` function. The formats include the widely used PNG (a raster bitmap) and PDF (vector graphics), with the ability to control the size and resolution of the output. In this case, we are saving a PDF version of the map, which maintains the highest quality, and a PNG version for web usage
 
@@ -118,13 +118,13 @@ ggplot2::ggsave("ggplot_map.pdf",
 If you’re creating a `PDF` for web use, a `dpi` of `72` is usually sufficient. If you’re creating a `PDF` for print, a `dpi` of `300` or higher is recommended. If you’re not sure what `dpi` to use, it’s best to check with your printer or the specifications of the website where you plan to upload the `PDF.`
 :::
 
-### Customizing the Static Map
+## Customizing the Static Map
 
-#### Adding additional layers: An Example with Points
+### Adding additional layers: An Example with Points
 
 To make your static map more informative and visually appealing, you can add additional layers such as points representing specific locations. Here's how to do it step-by-step.
 
-##### Step 1: Create a Data Frame with Location Data
+#### Step 1: Create a Data Frame with Location Data
 First, create a data frame containing the locations you want to plot on the map.
 
 ```{r sites, warning=FALSE, message=FALSE}
@@ -140,7 +140,7 @@ head(sites) # <5>
 4. Define the longitude column with the corresponding longitudes.
 5. Display the `sites` data frame.
 
-##### Step 2: Plot the Map with Additional Layers
+#### Step 2: Plot the Map with Additional Layers
 Next, use `ggplot2` to create a map with the world map data and add points from the sites data frame.
 
 ```{r ggplot_map02, warning=FALSE, message=FALSE}
@@ -168,9 +168,9 @@ ggplot_map # <9>
 
 By following these steps, you can add various layers to your static maps, enhancing the visualization with additional data points and custom styling.
 
-## Creating an Interactive Map with Leaflet
+# Creating an Interactive Map with Leaflet
 
-### Step 1: Load the Libraries
+## Step 1: Load the Libraries
 Load the `leaflet` library
 
 ```{r leaflet_library, warning=FALSE, message=FALSE}
@@ -178,7 +178,7 @@ library(leaflet) # <1>
 ```
 1. Load the `leaflet` package for interactive maps.
 
-### Step 2: Create the Map
+## Step 2: Create the Map
 We'll create an interactive map centered on a specific location.
 
 ```{r leaflet_map01, warning=FALSE, message=FALSE}
@@ -196,7 +196,7 @@ leaflet_map # <4>
 Change the basemap using `addProviderTiles()` function, e.g., `addProviderTiles(providers$Stamen.Toner)`
 :::
 
-### Step 3: Customize the Map
+## Step 3: Customize the Map
 Let's add more features, such as multiple markers and custom popups.
 
 ```{r leaflet_map02, warning=FALSE, message=FALSE}
@@ -212,8 +212,8 @@ leaflet_map # <5>
 4. Add custom popup messages for each marker.
 5. Display the map.
 
-## Additional Customizations
-### Advanced ggplot2 Features
+# Additional Customizations
+## Advanced ggplot2 Features
 To enhance your static maps further, you can customize themes, add annotations, and use scale transformations. These advanced features can make your map more informative and visually appealing.
 
 ```{r ggplot_map03, warning=FALSE, message=FALSE}
@@ -265,7 +265,7 @@ ggplot_map # <14>
 13. Add a scale bar annotation at the bottom right of the plot.
 14. Display the map.
  
-### Advanced Leaflet Features
+## Advanced leaflet Features
 For interactive maps, `leaflet` offers advanced features that allow you to add layers, custom controls, and integrate with other web technologies.
 
 ::: {.callout-tip title="Polygons and Circles"}
@@ -322,7 +322,7 @@ When things go wrong, here are some troubleshooting tips to help you diagnose an
   
 :::
 
-## FAQs
+# FAQs
 Q: Can I save my interactive map as an HTML file?
 
 A: Yes, use the `saveWidget()` function from the `htmlwidgets` package.
@@ -343,10 +343,10 @@ leaflet_map <- leaflet::leaflet() %>%
   leaflet::addMarkers(lng = -0.09, lat = 51.505, icon = custom_icon)
 leaflet_map
 ```
-## Conclusion
+# Conclusion
 Creating maps in R is a valuable skill for data visualization. With `ggplot2`, you can make static maps, and with `leaflet`, you can create interactive maps that provide a more engaging user experience. Experiment with different features and customization options to make your maps stand out. Happy mapping!
 
-## Additional Resources
+# Additional Resources
   - [`ggplot2`](https://ggplot2-book.org/maps) Documentation
   - [`leaflet`](https://rstudio.github.io/leaflet/articles/leaflet.html) for R Documentation
   -  [Maps Cookbook](https://r-graphics.org/recipe-miscgraph-map)
