@@ -1,0 +1,49 @@
+---
+layout: post
+title: "PrAna"
+description: |
+  Transforming the Analysis and Visualization of England’s NHS Primary Care Prescribing Data
+author: 
+  - name: "Kishore Kumar Jagadeesan"
+    orcid: 0000-0003-0916-256X
+date: 2022-01-06
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    toc-expand: 2
+    toc-title: On this page
+    toc-location: left
+categories: [ R/Shiny, R, R package, Prescription, data-visualization, Public Health]
+draft: false
+bibliography: references.bib
+---
+
+[<button type="button" class="btn btn-outline-primary"> {{< fa globe >}} Project Page </button>](https://pranaviz.bath.ac.uk/){.btn target=_blank}
+[<button type="button" class="btn btn-outline-secondary"> {{< fa brands github >}} Source Code </button>](https://github.com/PrAnaViz/PrAna){.btn target=_blank}
+
+**Introducing PrAna: A Powerful Tool for Analysing England's NHS Primary Care Prescribing Data**
+
+In the realm of healthcare and environmental science, understanding the consumption of active pharmaceutical ingredients (APIs) is crucial. **PrAna** emerges as a ground breaking tool that brings a new dimension to the analysis of England's NHS primary care prescribing data.
+
+Developed as an R package, `PrAna` is designed to aggregate and normalize England’s national level prescription data. It calculates the total prescribed quantity of different APIs, using open source statistical software R language. This data is vital for predicting the total amount of APIs released into the environment.
+
+PrAna is complemented by a user-friendly interactive tool, **PrAnaViz**, developed using the R/Shiny framework. This tool allows users to explore and visualize the spatio-temporal trends of the total prescribed quantity of APIs. Users can also download the results in various data formats for their further studies.
+
+With PrAna and PrAnaViz, users can visualize, explore, and report different spatio-temporal and long-term prescription trends for wider use. This can be used as a support tool for policy-makers, academics, researchers in public healthcare, and environmental scientists to monitor different groups of pharmaceuticals emitted to the environment and for prospective risk assessment of pharmaceuticals in the environment.
+
+Published in the esteemed journal BMC Medical Informatics and Decision Making[@jagadeesan2022], PrAna is a significant contribution to the field, empowering researchers to efficiently handle and interpret complex prescription data.
+
+**Explore the Features of PrAna**
+
+PrAna is packed with features that make it a versatile tool for any researcher working with England's NHS primary care prescribing data:
+
+-   **Data Aggregation and Normalization**: Transform your complex prescription datasets into easy-to-understand formats.
+-   **API Consumption Calculation**: Calculate the total prescribed quantity of different APIs, vital for predicting the total amount of APIs released into the environment.
+-   **Interactive Visualization**: Explore and visualize the spatio-temporal trends of the total prescribed quantity of APIs with PrAnaViz.
+-   **Data Export**: Download the results in various data formats for your further studies.
+-   **Accessibility**: Access PrAna from any operating system without the need for local installation.
+
+With PrAna, navigating through the complexities of England's NHS primary care prescribing data has never been easier.
+
+[PrAnaViz](https://pranaviz.bath.ac.uk/)

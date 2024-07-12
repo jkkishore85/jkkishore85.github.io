@@ -21,10 +21,12 @@ website:
         text: Home
       - href: about.qmd
         text: About
+      - href: projects.qmd
+        text: Projects
       - href: posts.qmd
-        text: Posts
+        text: Blog
       - href: courses.qmd
-        text: Courses
+        text: Courses & Workshops
       - href: tutorials.qmd
         text: Tutorials
   page-footer: 
