@@ -8,19 +8,15 @@ about:
   image-width: 14em
   links:
     - icon: linkedin
-      text: LinkedIn
       href: https://www.linkedin.com/in/jkishore/
       target: _blank
-    - icon: twitter
-      text: X
+    - icon: twitter-x
       href: https://x.com/kishorejag
       target: _blank
     - icon: github
-      text: GitHub
       href: https://github.com/jkkishore85
       target: _blank
     - icon: envelope
-      text: Email
       href: mailto:jkkishore85@gmail.com
 ---
 
