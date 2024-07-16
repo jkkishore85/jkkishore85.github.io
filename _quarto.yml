@@ -3,15 +3,17 @@ project:
   output-dir: docs
 
 website:
-  site-url: jkkishore85.github.io
   title: "Kishore Kumar Jagadeesan"
-  cookie-consent: true
+  site-url: jkkishore85.github.io
   repo-url: https://github.com/jkkishore85/jkkishore85.github.io
   repo-actions: [edit, issue]
   twitter-card:
     creator: "@kishorejag"
+    site: "@kishorejag"
+    title: "Kishore Kumar Jagadeesan"
   open-graph: true
-  
+  cookie-consent: true
+  google-analytics: G-QVQJ5QYQZQ
   navbar:
     tools:
       - icon: github
@@ -40,7 +42,7 @@ website:
   page-footer: 
     background: light
     left: © Copyright 2024, Kishore Kumar Jagadeesan
-    right: This website is built with [GitHub](https://github.com/jkkishore85/jkkishore85.github.io){target=_blank}, [R Project](https://www.r-project.org/about.html){target=_blank} and [Quarto](https://quarto.org/){target=_blank}
+    right: This website made using [Quarto®](https://quarto.org/) with ❤️, by [Kishore Kumar Jagadeesan](https://github.com/jkkishore85/){target=_blank}
 
 format:
   html:
@@ -50,15 +52,30 @@ format:
     css: styles.css
     page-layout: full
     link-external-newwindow: true
+    html-math-method: katex
+    number-sections: true
+    smooth-scroll: true
+    highlight-style: github
+    code-link: true
+    df-print: paged
     toc: true
     toc-depth: 2
     toc-expand: 2
     toc-title: On this page
     toc-location: left
+    filters:
+      - social-share
     share:
-      twitter: true
-      linkedin: true
-      email: true
+      permalink: "https://jkkishore85.github.io/"
+      description: "Kishore Kumar Jagadeesan's website"
+      twitter: false
+      facebook: false
+      reddit: false
+      stumble: false
+      tumblr: false
+      linkedin: false
+      email: false
+      mastodon: false
 
 editor: visual
 
