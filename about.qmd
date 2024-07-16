@@ -1,9 +1,63 @@
 ---
-title: "About"
+title: "About Me"
+about:
+  template: trestles
+  image: images/kishore_round.png
+  image-shape: round
+  links:
+    - icon: linkedin
+      href: https://www.linkedin.com/in/jkishore/
+      target: _blank
+    - icon: twitter-x
+      href: https://x.com/kishorejag
+      target: _blank
+    - icon: github
+      href: https://github.com/jkkishore85
+      target: _blank
+    - icon: envelope
+      href: mailto:jkkishore85@gmail.com
 ---
 
--   Currently Postdoctoral Research Associate in Environmental Chemistry & Public Health Research Group , Department of Chemistry, University of Bath, UK
+## About me
 
--   PhD (Biomedical Engineering) from Lund University. My PhD thesis involved development of high-throughput mass spectrometry method to screen solid-phase extraction materials.
+Hello! I’m Kishore Jagadeesan, a Postdoctoral Research Associate at the Department of Chemistry, [University of Bath](https://researchportal.bath.ac.uk/en/persons/kishore-jagadeesan), UK. I’m passionate about the environment, water quality, and public health.
 
--   During my PhD developed MALDIViz, a comprehensive informatics tool for handling dataset from the screening studies. This application can be used to do quality checks, visualizations and analysis of mass spectrometry data.
+My work primarily involves developing research tools for statistical analysis and visualization of massive datasets across many disciplines. I’m highly proficient in coding with R and HTML. One of my notable contributions is the development of `PERK`, an R/Shiny application tool that predicts and visualizes environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution.
+
+I’m always excited to connect with others who share similar interests. I’m also open to discussions about R Shiny, mass spectrometry, data visualization, and wastewater epidemiology.
+
+For more information on my past work and contributions, feel free to explore my website and my GitHub profile. Thank you for visiting!
+
+## Intrests
+
+ * Analytical Chemistry
+ * R programming
+ * Public health
+ * Environmental Monitoring
+ * AI
+
+## Experience
+
+Post-doctoral Research Associate | 2018 - Current  
+University of Bath | Bath, UK
+
+Marie Curie Early Stage Researcher - PhD student | 2013 - 2017  
+Lund University | Lund, Sweden
+
+Project Assistant - Level II | 2011 - 2012
+National Physical Laboratory | New Delhi, India
+
+Junior Executive (Production) | 2006 - 2008
+Biocon | Bengaluru, India
+
+## Education
+
+PhD, Biomedical Engineering | 2013 - 2017     
+Lund University | Lund, Sweden
+
+Master of Science, MSc, Analytical Chemistry | 2008 - 2010    
+University of Madras | Chennai, India
+
+Bachelor of Science, BSc, Chemistry | 2003 - 2006    
+PSG College of Arts and Science | Coimbatore, India
+
