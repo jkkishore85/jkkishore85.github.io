@@ -18,10 +18,6 @@ format:
     code-line-numbers: true
     code-copy: true
     code-annotations: hover
-comments: 
-  giscus: 
-    repo: jkkishore85/jkkishore85.github.io
-repo-actions: [edit, issue]
 categories: [R, R Tutorial, Maps, ggplot, leaflet, tidyverse, environmental monitoring]
 citation: 
   url: https://jkkishore85.github.io/tutorials/2024-07-11-rtutorial-map-01/

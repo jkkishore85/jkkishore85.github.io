@@ -5,3 +5,19 @@ freeze: auto
 
 # enable banner style title blocks (see https://quarto.org/docs/authoring/title-blocks.html)
 title-block-banner: true
+
+comments: 
+  giscus: 
+    repo: jkkishore85/jkkishore85.github.io
+    reactions-enabled: true
+share:
+  permalink: "https://jkkishore85.github.io/"
+  description: "Kishore Kumar Jagadeesan's website"
+  twitter: true
+  facebook: true
+  reddit: true
+  stumble: true
+  tumblr: true
+  linkedin: true
+  email: true
+  mastodon: true

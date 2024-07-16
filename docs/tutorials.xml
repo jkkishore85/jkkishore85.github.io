@@ -35,8 +35,8 @@ TL;DR
 </div>
 </div>
 <p>Welcome to this step-by-step tutorial where you’ll learn how to create beautiful and interactive maps using R. We’ll be using two powerful R packages: <code>ggplot2</code> for static maps and <code>leaflet</code> for interactive maps. Whether you’re a beginner or looking to refine your mapping skills, this guide will walk you through the basics and provide some handy tips and tricks along the way.</p>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>Mapping is a crucial part of data visualization, helping to present geographic data in an easily understandable way. In this tutorial, we will:</p>
 <ol type="1">
 <li>Create a static map using <code>ggplot2</code>.</li>
@@ -60,8 +60,8 @@ When to Use Which
 </div>
 </div>
 </section>
-<section id="prerequisites" class="level1">
-<h1>Prerequisites</h1>
+<section id="prerequisites" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Prerequisites</h1>
 <p>Ensure you have R and RStudio installed on your computer. You will also need to install the necessary packages.</p>
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -87,10 +87,10 @@ font-style: inherit;">"ggrepel"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"htmlwidgets"</span>))</span></code></pre></div>
 </section>
-<section id="creating-a-static-map-with-ggplot2" class="level1">
-<h1>Creating a Static Map with ggplot2</h1>
-<section id="step-1-load-the-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-load-the-libraries">Step 1: Load the Libraries</h2>
+<section id="creating-a-static-map-with-ggplot2" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Creating a Static Map with ggplot2</h1>
+<section id="step-1-load-the-libraries" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="step-1-load-the-libraries"><span class="header-section-number">3.1</span> Step 1: Load the Libraries</h2>
 <p>First, load the required libraries.</p>
 <div class="cell">
 <details class="code-fold">
@@ -137,8 +137,8 @@ font-style: inherit;">library</span>(sf)</span><div class="code-annotation-gutte
 </div>
 </div>
 </section>
-<section id="step-2-load-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-load-the-data">Step 2: Load the Data</h2>
+<section id="step-2-load-the-data" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="step-2-load-the-data"><span class="header-section-number">3.2</span> Step 2: Load the Data</h2>
 <p>For this tutorial, we’ll use the <code>rnaturalearth</code> package, which provides natural earth vector map data in various scales. We’ll load world map data using this package.</p>
 <div class="cell">
 <details class="code-fold">
@@ -169,8 +169,8 @@ font-style: inherit;">"sf"</span>)</span><div class="code-annotation-gutter-bg">
 </div>
 </div>
 </section>
-<section id="step-3-create-the-map" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-create-the-map">Step 3: Create the Map</h2>
+<section id="step-3-create-the-map" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="step-3-create-the-map"><span class="header-section-number">3.3</span> Step 3: Create the Map</h2>
 <p>We’ll use <code>ggplot2</code> to plot the world map.</p>
 <div class="cell">
 <details class="code-fold">
@@ -294,8 +294,8 @@ font-style: inherit;">"aliceblue"</span>))</span>
 </div>
 </div>
 </section>
-<section id="step-4-save-the-map" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-save-the-map">Step 4: Save the Map</h2>
+<section id="step-4-save-the-map" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="step-4-save-the-map"><span class="header-section-number">3.4</span> Step 4: Save the Map</h2>
 <p>Once the final map is prepared, it can be conveniently saved in various formats using the <code>ggsave()</code> function. The formats include the widely used PNG (a raster bitmap) and PDF (vector graphics), with the ability to control the size and resolution of the output. In this case, we are saving a PDF version of the map, which maintains the highest quality, and a PNG version for web usage</p>
 <div class="sourceCode" id="annotated-cell-5" style="background: #f1f3f5;"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1">ggplot2<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -367,13 +367,13 @@ ggsave()
 </div>
 </div>
 </section>
-<section id="customizing-the-static-map" class="level2">
-<h2 class="anchored" data-anchor-id="customizing-the-static-map">Customizing the Static Map</h2>
-<section id="adding-additional-layers-an-example-with-points" class="level3">
-<h3 class="anchored" data-anchor-id="adding-additional-layers-an-example-with-points">Adding additional layers: An Example with Points</h3>
+<section id="customizing-the-static-map" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="customizing-the-static-map"><span class="header-section-number">3.5</span> Customizing the Static Map</h2>
+<section id="adding-additional-layers-an-example-with-points" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="adding-additional-layers-an-example-with-points"><span class="header-section-number">3.5.1</span> Adding additional layers: An Example with Points</h3>
 <p>To make your static map more informative and visually appealing, you can add additional layers such as points representing specific locations. Here’s how to do it step-by-step.</p>
-<section id="step-1-create-a-data-frame-with-location-data" class="level4">
-<h4 class="anchored" data-anchor-id="step-1-create-a-data-frame-with-location-data">Step 1: Create a Data Frame with Location Data</h4>
+<section id="step-1-create-a-data-frame-with-location-data" class="level4" data-number="3.5.1.1">
+<h4 data-number="3.5.1.1" class="anchored" data-anchor-id="step-1-create-a-data-frame-with-location-data"><span class="header-section-number">3.5.1.1</span> Step 1: Create a Data Frame with Location Data</h4>
 <p>First, create a data frame containing the locations you want to plot on the map.</p>
 <div class="cell">
 <details class="code-fold">
@@ -476,8 +476,8 @@ font-style: inherit;">head</span>(sites)</span><div class="code-annotation-gutte
 </div>
 </div>
 </section>
-<section id="step-2-plot-the-map-with-additional-layers" class="level4">
-<h4 class="anchored" data-anchor-id="step-2-plot-the-map-with-additional-layers">Step 2: Plot the Map with Additional Layers</h4>
+<section id="step-2-plot-the-map-with-additional-layers" class="level4" data-number="3.5.1.2">
+<h4 data-number="3.5.1.2" class="anchored" data-anchor-id="step-2-plot-the-map-with-additional-layers"><span class="header-section-number">3.5.1.2</span> Step 2: Plot the Map with Additional Layers</h4>
 <p>Next, use <code>ggplot2</code> to create a map with the world map data and add points from the sites data frame.</p>
 <div class="cell">
 <details class="code-fold">
@@ -673,10 +673,10 @@ font-style: inherit;">"aliceblue"</span>))</span>
 </section>
 </section>
 </section>
-<section id="creating-an-interactive-map-with-leaflet" class="level1">
-<h1>Creating an Interactive Map with Leaflet</h1>
-<section id="step-1-load-the-libraries-1" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-load-the-libraries-1">Step 1: Load the Libraries</h2>
+<section id="creating-an-interactive-map-with-leaflet" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Creating an Interactive Map with Leaflet</h1>
+<section id="step-1-load-the-libraries-1" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="step-1-load-the-libraries-1"><span class="header-section-number">4.1</span> Step 1: Load the Libraries</h2>
 <p>Load the <code>leaflet</code> library</p>
 <div class="cell">
 <details class="code-fold">
@@ -695,8 +695,8 @@ font-style: inherit;">library</span>(leaflet)</span><div class="code-annotation-
 </div>
 </div>
 </section>
-<section id="step-2-create-the-map" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-create-the-map">Step 2: Create the Map</h2>
+<section id="step-2-create-the-map" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="step-2-create-the-map"><span class="header-section-number">4.2</span> Step 2: Create the Map</h2>
 <p>We’ll create an interactive map centered on a specific location.</p>
 <div class="cell">
 <details class="code-fold">
@@ -759,8 +759,8 @@ font-style: inherit;">"Hello, London!"</span>)</span>
 </dl>
 </div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-6fdd998c941e69ae4867" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6fdd998c941e69ae4867">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[51.505,-0.09,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Hello, London!",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.505,51.505],"lng":[-0.09,-0.09]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-2eb8bef4e12f80b201ef" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-2eb8bef4e12f80b201ef">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[51.505,-0.09,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Hello, London!",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.505,51.505],"lng":[-0.09,-0.09]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Explore Different Basemaps">
@@ -777,8 +777,8 @@ Explore Different Basemaps
 </div>
 </div>
 </section>
-<section id="step-3-customize-the-map" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-customize-the-map">Step 3: Customize the Map</h2>
+<section id="step-3-customize-the-map" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="step-3-customize-the-map"><span class="header-section-number">4.3</span> Step 3: Customize the Map</h2>
 <p>Let’s add more features, such as multiple markers and custom popups.</p>
 <div class="cell">
 <details class="code-fold">
@@ -860,16 +860,16 @@ font-style: inherit;">"Another Location"</span>))</span>
 </dl>
 </div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-3a768b90a55c1da738d2" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-3a768b90a55c1da738d2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[51.505,51.51],[-0.09,-0.1],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Hello, London!","Another Location"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.505,51.51],"lng":[-0.1,-0.09]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-36be9825c031573ebc7c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-36be9825c031573ebc7c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[51.505,51.51],[-0.09,-0.1],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Hello, London!","Another Location"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[51.505,51.51],"lng":[-0.1,-0.09]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 </section>
-<section id="additional-customizations" class="level1">
-<h1>Additional Customizations</h1>
-<section id="advanced-ggplot2-features" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-ggplot2-features">Advanced ggplot2 Features</h2>
+<section id="additional-customizations" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Additional Customizations</h1>
+<section id="advanced-ggplot2-features" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="advanced-ggplot2-features"><span class="header-section-number">5.1</span> Advanced ggplot2 Features</h2>
 <p>To enhance your static maps further, you can customize themes, add annotations, and use scale transformations. These advanced features can make your map more informative and visually appealing.</p>
 <div class="cell">
 <details class="code-fold">
@@ -1206,8 +1206,8 @@ font-style: inherit;">"cm"</span>))</span>
 </div>
 </div>
 </section>
-<section id="advanced-leaflet-features" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-leaflet-features">Advanced leaflet Features</h2>
+<section id="advanced-leaflet-features" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="advanced-leaflet-features"><span class="header-section-number">5.2</span> Advanced leaflet Features</h2>
 <p>For interactive maps, <code>leaflet</code> offers advanced features that allow you to add layers, custom controls, and integrate with other web technologies.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Polygons and Circles">
 <div class="callout-header d-flex align-content-center">
@@ -1321,8 +1321,8 @@ font-style: inherit;">"Circle around another location"</span>)</span>
 </dl>
 </div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-764eed7b9fbb0fecc0b5" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-764eed7b9fbb0fecc0b5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[51.505,-0.09,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Hello, London!",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircles","args":[51.51,-0.1,50,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":1,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},"Circle around another location",null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"limits":{"lat":[51.505,51.51],"lng":[-0.1,-0.09]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-f87f6d451478c4f75abb" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-f87f6d451478c4f75abb">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[51.505,-0.09,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Hello, London!",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircles","args":[51.51,-0.1,50,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":1,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},"Circle around another location",null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"limits":{"lat":[51.505,51.51],"lng":[-0.1,-0.09]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>These advanced features in ggplot2 and leaflet enable you to create detailed, informative, and visually appealing maps, whether they are static or interactive. By leveraging these tools, you can effectively communicate geographic data to your audience.</p>
@@ -1379,8 +1379,8 @@ Troubleshooting
 </div>
 </section>
 </section>
-<section id="faqs" class="level1">
-<h1>FAQs</h1>
+<section id="faqs" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> FAQs</h1>
 <p>Q: Can I save my interactive map as an HTML file?</p>
 <p>A: Yes, use the <code>saveWidget()</code> function from the <code>htmlwidgets</code> package.</p>
 <div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
@@ -1447,12 +1447,12 @@ background-color: null;
 font-style: inherit;">icon =</span> custom_icon)</span>
 <span id="cb4-5">leaflet_map</span></code></pre></div>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="conclusion" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Conclusion</h1>
 <p>Creating maps in R is a valuable skill for data visualization. With <code>ggplot2</code>, you can make static maps, and with <code>leaflet</code>, you can create interactive maps that provide a more engaging user experience. Experiment with different features and customization options to make your maps stand out. Happy mapping!</p>
 </section>
-<section id="additional-resources" class="level1">
-<h1>Additional Resources</h1>
+<section id="additional-resources" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Additional Resources</h1>
 <ul>
 <li><a href="https://ggplot2-book.org/maps"><code>ggplot2</code></a> Documentation</li>
 <li><a href="https://rstudio.github.io/leaflet/articles/leaflet.html"><code>leaflet</code></a> for R Documentation</li>
