@@ -1,0 +1,39 @@
+---
+layout: post
+title: "NHS-R Webinar: August 2022 "
+description: |
+  PrAna: R package to calculate & visualize NHS primary care prescribing data
+author: 
+  - name: "Kishore Kumar Jagadeesan"
+    orcid: 0000-0003-0916-256X
+date: 2022-08-17
+categories: [webinar, talks, data-visualization, R, PrAna, NHS-R]
+draft: false
+citation: 
+  url: https://jkkishore85.github.io/courses/2022-08-17-nhsr-prana/ 
+---
+
+# Webinar: PrAna - R package to calculate & visualize NHS primary care prescribing data
+
+I’m delighted to share with you a talk (Webinar) I recently gave on Wednesday, 17th August 2022. The talk, now available for viewing on YouTube, is centred around `PrAna`, an R package that has significantly transformed the way we analyse England NHS primary care prescribing data.
+
+[`PrAna`](https://jkkishore85.github.io/projects/2022-01-06-prana/index.html) is an R package that calculates and visualizes England NHS prescribing data. It’s a tool that has been instrumental in my work, particularly in the development of the `PERK` tool, which predicts and visualizes environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution.
+
+In the talk, I discuss the inspiration behind `PrAna`, the challenges we faced during its development, and how it has transformed the way we understand and interpret complex datasets. I also share some real-world applications of `PrAna`, demonstrating its versatility and power in tackling a wide range of research questions.
+
+The talk concludes with a Q&A session, where I answer questions from the audience about `PrAna`, its applications, and future developments. 
+
+This talk was organized by the [NHS-R Community](https://nhsrcommunity.com/about/), a vibrant community that regularly hosts [webinars and workshops](https://nhsrcommunity.com/past-events/#event_type-webinars) on a wide range of topics related to R programming and healthcare data analysis. Their events provide a platform for sharing knowledge, learning new skills, and networking with other professionals in the field
+
+Whether you’re a data scientist, a researcher, or simply someone interested in data analysis, I believe you’ll find this talk both informative and inspiring.
+
+Check out the full presentation on [YouTube](https://www.youtube.com/watch?v=ztoWo6hiPkE)  and feel free to share your thoughts and questions in the comments section. I look forward to hearing your feedback!
+
+{{< 
+video https://www.youtube.com/watch?v=ztoWo6hiPkE 
+title = "The video "NHS-R Webinar: PrAna R package to calculate & visualize NHS primary care prescribing data, Aug 2022"
+>}}
+
+
+
+Stay tuned for more updates and talks in the future. Thank you for your continued support and interest in my work!
