@@ -18,9 +18,13 @@ format:
     code-line-numbers: true
     code-copy: true
     code-annotations: hover
+comments: 
+  giscus: 
+    repo: jkkishore85/jkkishore85.github.io
+repo-actions: [edit, issue]
 categories: [R, R Tutorial, Maps, ggplot, leaflet, tidyverse, environmental monitoring]
 citation: 
-  url: https://jkkishore85.github.io/tutorials/2024-07-11-rtutorial-map-01/ 
+  url: https://jkkishore85.github.io/tutorials/2024-07-11-rtutorial-map-01/
 ---
 ::: {.callout-note icon=false title="TL;DR"}
 In this tutorial, you'll learn how to create static maps using `ggplot2` and interactive maps using `leaflet` in R. We'll cover the basics, provide code examples, and include tips and troubleshooting advice. By the end, you'll be able to create customized maps to visualize geographic data effectively.
