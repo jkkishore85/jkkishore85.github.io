@@ -45,5 +45,3 @@ PrAna is packed with features that make it a versatile tool for any researcher w
 -   **Accessibility**: Access PrAna from any operating system without the need for local installation.
 
 With PrAna, navigating through the complexities of England's NHS primary care prescribing data has never been easier.
-
-[PrAnaViz](https://pranaviz.bath.ac.uk/)

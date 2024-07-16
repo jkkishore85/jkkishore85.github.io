@@ -1,0 +1,34 @@
+---
+layout: post
+title: "PERK"
+description: |
+  Advanced Predictive Tool for Environmental Risk Assessment
+author: 
+  - name: "Kishore Kumar Jagadeesan"
+    orcid: 0000-0003-0916-256X
+date: 2023-02-21
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    toc-expand: 2
+    toc-title: On this page
+    toc-location: left
+categories: [ R/Shiny, R, R package, Prescription, data-visualization, Public Health, Environmental Monitoring]
+draft: false
+bibliography: references.bib
+---
+
+[<button type="button" class="btn btn-outline-primary"> {{< fa globe >}} Project Page </button>](https://perk.bath.ac.uk/){.btn target="_blank"} [<button type="button" class="btn btn-outline-secondary"> {{< fa brands github >}} Source Code </button>](https://github.com/jkkishore85/PERK/){.btn target="_blank"}
+
+PERK, an acronym for **P**redicting **E**nvironmental concentration and **R**is**K**, is an R/Shiny application tool. It is designed to facilitate automated modelling and reporting of predicted environmental concentrations of a comprehensive set of pharmaceuticals derived from a wide range of therapeutic classes with different modes of action.
+
+The tool allows users to input their measured concentration, and compare the predicted (PEC) and measured concentrations (MEC) of the pharmaceuticals by means of the PEC/MEC ratio. This helps to establish whether the predicted equations used tend to underestimate or overestimate measured values.
+
+PERK provides a consistent interactive user interface in a familiar dashboard layout, enabling users to visualize predicted values and compare them with their measured values without any hassles¹². Users can download data and graphs generated using the tool in .csv format or as publication-ready images.
+
+The tool uses prescription data from PrAna, an R package to calculate and visualize England NHS prescribing data. It also uses data from WWTP collaborators, API properties, recovery percentage, physio-chemical properties, and eco-toxicity data collected from research articles and data repositories.
+
+PERK is easy to install and use. With just a few commands, users can install it and begin using it. For an introduction to the package, step-by-step instructions on getting started, and more information on the different ways you can use the package, users can refer to the [PERK-Walkthrough tutorial](https://perk.bath.ac.uk/articles/PERK-Walkthrough.html).
+
+This work is a part of the Wastewater Fingerprinting for Public Health Assessment (ENTRUST) project funded by Wessex Water and EPSRC IAA (grant no. EP/R51164X/1). If the package helps you with your work in any way that justifies it, please cite the article published in Science of The Total Environment[@jagadeesan2023].
