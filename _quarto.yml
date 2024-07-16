@@ -3,19 +3,25 @@ project:
   output-dir: docs
 
 website:
-  site-url: https://github.com/jkkishore85/jkkishore85.github.io
+  site-url: jkkishore85.github.io
   title: "Kishore Kumar Jagadeesan"
+  cookie-consent: true
+  repo-url: https://github.com/jkkishore85/jkkishore85.github.io
+  repo-actions: [edit, issue]
+  twitter-card:
+    creator: "@kishorejag"
+  open-graph: true
+  
   navbar:
     tools:
       - icon: github
         href: https://github.com/jkkishore85
       - icon: linkedin
         href: https://www.linkedin.com/in/jkishore/
-      - icon: twitter
+      - icon: twitter-x
         href: https://x.com/kishorejag
-      - icon: send-fill
+      - icon: envelope
         href: mailto:jkkishore85@gmail.com
-        
     left:
       - href: index.qmd
         text: Home
@@ -25,20 +31,34 @@ website:
         text: Projects
       - href: posts.qmd
         text: Blog
-      - href: courses.qmd
-        text: Courses & Workshops
+      - href: workshops.qmd
+        text: Talks & Workshops
       - href: tutorials.qmd
         text: Tutorials
+      - href: publications.qmd
+        text: Publications
   page-footer: 
     background: light
     left: © Copyright 2024, Kishore Kumar Jagadeesan
     right: This website is built with [GitHub](https://github.com/jkkishore85/jkkishore85.github.io){target=_blank}, [R Project](https://www.r-project.org/about.html){target=_blank} and [Quarto](https://quarto.org/){target=_blank}
+
 format:
   html:
-    theme: flatly
+    theme:
+      light: flatly
+      dark: darkly
     css: styles.css
-    toc: true
     page-layout: full
+    link-external-newwindow: true
+    toc: true
+    toc-depth: 2
+    toc-expand: 2
+    toc-title: On this page
+    toc-location: left
+    share:
+      twitter: true
+      linkedin: true
+      email: true
 
 editor: visual
 
