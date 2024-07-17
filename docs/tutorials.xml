@@ -10,7 +10,369 @@
 <atom:link href="jkkishore85.github.io/tutorials.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.555</generator>
-<lastBuildDate>Wed, 10 Jul 2024 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 16 Jul 2024 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams</title>
+  <dc:creator>Kishore Kumar Jagadeesan</dc:creator>
+  <link>jkkishore85.github.io/tutorials/2024-07-17-quartotutorial-sharepoint-01/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="TL;DR">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TL;DR
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This tutorial guides you through creating a self-contained HTML document using Quarto and sharing it on SharePoint or Microsoft Teams.</p>
+<ol type="1">
+<li><p><strong>Set Up</strong>: Install Quarto, R, and RStudio.</p></li>
+<li><p><strong>Create a Project</strong>: Open RStudio and create a new Quarto project.</p></li>
+<li><p><strong>Configure <code>_quarto.yml</code></strong>: Ensure your Quarto project configuration includes <code>self-contained: true</code>.</p></li>
+<li><p><strong>Create Document</strong>: Write your content in <code>index.qmd</code> and save it.</p></li>
+<li><p><strong>Render Document</strong>: Use <code>quarto_render</code> to generate a self-contained <code>index.html</code>.</p></li>
+<li><p><strong>Upload and Share</strong>: Upload the <code>index.html</code> to SharePoint or Teams and share the link.</p></li>
+</ol>
+<p><strong>Common Issues</strong>:</p>
+<ul>
+<li><p>Check file paths and package installations if errors occur.</p></li>
+<li><p>Verify permissions and file size limits for SharePoint uploads.</p></li>
+</ul>
+<p><strong>Use Cases</strong>:</p>
+<ul>
+<li>Data reports, project documentation, and educational materials.</li>
+</ul>
+<p>For more detailed steps and troubleshooting, refer to the full tutorial. Happy coding! 🚀</p>
+</div>
+</div>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>In this tutorial, you will learn how to create a self-contained HTML document using Quarto and share it on SharePoint or Microsoft Teams. A self-contained document embeds all resources, making it easy to distribute and share without external dependencies.</p>
+</section>
+<section id="background" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Background</h1>
+<p>Quarto is a next-generation, open-source publishing system that allows you to create and share documents, presentations, websites, and more. It integrates seamlessly with <code>R</code>, <code>Python</code>, and <code>Julia</code>, making it a versatile tool for data scientists and analysts.</p>
+<p><strong>SharePoint</strong> is a web-based collaborative platform that integrates with Microsoft Office. It is widely used for document management and storage, making it an ideal place to share your Quarto documents. Similarly, <strong>Microsoft Teams</strong> is a collaboration tool that allows you to share files and work together in real-time.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Why Self-Contained Documents?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why Self-Contained Documents?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Portability</strong>: All resources (images, CSS, JS) are embedded in a single HTML file.</li>
+<li><strong>Ease of Sharing</strong>: Simple to share via email or upload to platforms like SharePoint.</li>
+<li><strong>Offline Access</strong>: Users can access the content without an internet connection.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="prerequisites" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Prerequisites</h1>
+<ul>
+<li><strong>Quarto Installation</strong>: Ensure Quarto is installed on your system. If not, follow the <a href="https://quarto.org/docs/get-started/">installation guide</a> on the Quarto website.</li>
+<li><strong>R and RStudio</strong>: Ensure you have R and RStudio installed. Quarto integrates well with R for generating dynamic documents.</li>
+</ul>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install.packages</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"quarto"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rmarkdown"</span>,  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ggplot2"</span>))</span></code></pre></div>
+</section>
+<section id="step-by-step-guide" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Step-by-Step Guide</h1>
+<section id="step-1-create-a-new-quarto-project" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="step-1-create-a-new-quarto-project"><span class="header-section-number">4.1</span> Step 1: Create a New Quarto Project</h2>
+<ol type="1">
+<li>Open RStudio.</li>
+<li>Create a New Project: Go to <code>File</code> &gt; <code>New Project</code></li>
+<li>Choose Project Type: Select <code>New Directory</code>, then <code>Quarto Project</code>.</li>
+<li>Specify Project Details: Enter a project name and choose a directory. Click <code>Create Project</code>.</li>
+<li>Load <code>R</code> libraries.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="annotated-cell-2" style="background: #f1f3f5;"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(quarto)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-2" class="code-annotation-target"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(rmarkdown)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-3" class="code-annotation-target"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div>
+</details>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Load the <code>quarto</code> package for rendering Quarto documents.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="2">Load the <code>rmarkdown</code> package, which provides rendering functions used by Quarto.</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="3">Load the <code>ggplot2</code> package for data visualization.</span>
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="step-2-configure-_quarto.yml" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="step-2-configure-_quarto.yml"><span class="header-section-number">4.2</span> Step 2: Configure <code>_quarto.yml</code></h2>
+<ol type="1">
+<li>Locate <code>_quarto.yml</code>: In the root directory of your new Quarto project, find the <code>_quarto.yml</code> file.</li>
+<li>Edit <code>_quarto.yml</code>: Open <code>_quarto.yml</code> and add the following content to configure the project for self-contained HTML output.</li>
+</ol>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">project</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<span id="cb2-2"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">type</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> website</span></span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">format</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<span id="cb2-5"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span></span>
+<span id="cb2-6"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">self-contained</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">true</span></span></code></pre></div>
+</section>
+<section id="step-3-create-a-quarto-document" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="step-3-create-a-quarto-document"><span class="header-section-number">4.3</span> Step 3: Create a Quarto Document</h2>
+<ol type="1">
+<li><strong><em>Create a New Document:</em></strong> In RStudio, go to <code>File</code> &gt; <code>New File</code> &gt; <code>Quarto Document</code>.</li>
+<li><strong><em>Save the Document:</em></strong> Save the new document as <code>index.qmd</code> in your project directory.</li>
+<li><strong><em>Edit the Document:</em></strong> Add your content to <code>index.qmd.</code> Here is an example template:</li>
+</ol>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="cb3-2"><span class="an" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">title:</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> "Sample Quarto Document" </span></span>
+<span id="cb3-3"><span class="an" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">author:</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> "Your Name" </span></span>
+<span id="cb3-4"><span class="an" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">date:</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> "2024-07-17" </span></span>
+<span id="cb3-5"><span class="an" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">format:</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> html</span></span>
+<span id="cb3-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="cb3-7"></span>
+<span id="cb3-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;"># Introduction</span></span>
+<span id="cb3-9"></span>
+<span id="cb3-10">This is a sample Quarto document that is self-contained and ready to be shared on SharePoint.</span>
+<span id="cb3-11"></span>
+<span id="cb3-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">## Data Visualization Example</span></span>
+<span id="cb3-13"></span>
+<span id="cb3-14"><span class="in" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">```r</span></span>
+<span id="cb3-15"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2) </span>
+<span id="cb3-16"></span>
+<span id="cb3-17"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(mtcars, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> wt, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> mpg)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb3-18">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb3-19">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
+</section>
+<section id="step-4-render-the-quarto-document" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="step-4-render-the-quarto-document"><span class="header-section-number">4.4</span> Step 4: Render the Quarto Document</h2>
+<ul>
+<li>Render the Document: In RStudio, click the Render button or run the following command in the console:</li>
+</ul>
+<div class="sourceCode" id="annotated-cell-5" style="background: #f1f3f5;"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1">1</button><span id="annotated-cell-5-1" class="code-annotation-target">quarto<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">quarto_render</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"index.qmd"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="1" data-code-annotation="1">Render the Quarto document to a self-contained HTML file</span>
+</dd>
+</dl>
+<ul>
+<li>Check Output: After rendering, you should see an <code>index.html</code> file in your project directory. This file is self-contained and includes all necessary resources.</li>
+</ul>
+</section>
+<section id="step-5-upload-to-sharepoint" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="step-5-upload-to-sharepoint"><span class="header-section-number">4.5</span> Step 5: Upload to SharePoint</h2>
+<ul>
+<li><strong><em>Access SharePoint:</em></strong> Open your SharePoint site in a web browser.</li>
+<li><strong><em>Navigate to Document Library:</em></strong> Go to the document library where you want to upload your file.</li>
+<li><strong><em>Upload the HTML File:</em></strong> Click <code>Upload</code> and select the <code>index.html</code> file from your Quarto project directory.</li>
+<li><strong><em>Share the Document:</em></strong> Once uploaded, you can share the document with others by generating a SharePoint link.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Rendering Quarto">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rendering Quarto
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>Ctrl + Shift + K</code> in RStudio to quickly render your Quarto document.</p>
+</div>
+</div>
+</section>
+<section id="step-6-verify-and-share" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="step-6-verify-and-share"><span class="header-section-number">4.6</span> Step 6: Verify and Share</h2>
+<ul>
+<li><strong><em>Verify the Document:</em></strong> Open the uploaded HTML file in SharePoint to ensure it displays correctly. `- <strong><em>Share the Link:</em></strong> Copy the SharePoint link and share it with your audience.</li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled" title="Troubleshooting">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Troubleshooting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When things go wrong, here are some troubleshooting tips to help you diagnose and fix common issues:</p>
+<ul>
+<li><strong><em>Incorrect File Paths:</em></strong> Ensure that the file paths in your <code>_quarto.yml</code> and document are correct. Check for typos or incorrect directory names.</li>
+<li><strong><em>Missing Packages:</em></strong> If you encounter errors related to missing packages, ensure all required packages are installed. Use install.packages(“packageName”) to install any missing packages.</li>
+<li><strong><em>Rendering Issues:</em></strong> If the document does not render correctly, check the console for error messages. Ensure that the self-contained: true option is correctly set in <code>_quarto.yml</code>.</li>
+<li><strong><em>SharePoint Upload Problems:</em></strong> Ensure you have the necessary permissions to upload files to the SharePoint document library. Check the file size limit for uploads. Large files might need to be compressed or split.</li>
+<li><strong><em>External Resource Loading:</em></strong> Ensure all external resources (e.g., images, scripts) are correctly embedded in the document. The self-contained option should handle this, but double-check if issues arise.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="faqs" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> FAQs</h1>
+<p>Q. Can I use other languages with Quarto?</p>
+<p>A. Yes, Quarto supports <code>R</code>, <code>Python</code>, and <code>Julia.</code> You can mix and match these languages within a single document.</p>
+<p>Q. How do I update my document?</p>
+<p>A. Simply edit the <code>.qmd</code> file and render it again using <code>quarto_render</code>. Upload the new <code>HTML</code> file to SharePoint or Teams to replace the old version.</p>
+<p>Q. Is there a way to version control my Quarto project?</p>
+<p>A. Yes, using Git for version control is highly recommended. It allows you to track changes, collaborate with others, and manage different versions of your project.</p>
+</section>
+<section id="conclusion" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Conclusion</h1>
+<p>By following these steps, you can create a self-contained HTML document using Quarto and share it on SharePoint. This ensures your document is portable, easy to share, and accessible without external dependencies. With this approach, you can effectively distribute your content and provide a seamless experience for your audience.</p>
+</section>
+<section id="additional-resources" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Additional Resources</h1>
+<ul>
+<li><a href="https://quarto.org/docs/">Quarto Documentation</a>.</li>
+<li><a href="https://www.rstudio.com/">RStudio</a></li>
+<li><a href="https://support.microsoft.com/en-us/sharepoint">SharePoint Help</a></li>
+</ul>
+<p>By mastering these steps, you can ensure your documents are well-prepared for sharing and distribution, enhancing your collaborative and presentation efforts.</p>
+<p>We hope you found this tutorial helpful. If you have any questions or feedback, please feel free to leave a comment below. We appreciate your input and are always looking to improve our content. Happy coding! 🚀</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kumar jagadeesan2024,
+  author = {Kumar Jagadeesan, Kishore},
+  title = {Creating and {Sharing} a {Self-Contained} {Quarto} {Document}
+    in {SharePoint/Teams}},
+  date = {2024-07-17},
+  url = {https://jkkishore85.github.io/tutorials/2024-07-17-quartotutorial-sharepoint-01/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kumar jagadeesan2024" class="csl-entry quarto-appendix-citeas">
+Kumar Jagadeesan, Kishore. 2024. <span>“Creating and Sharing a
+Self-Contained Quarto Document in SharePoint/Teams.”</span> July 17,
+2024. <a href="https://jkkishore85.github.io/tutorials/2024-07-17-quartotutorial-sharepoint-01/">https://jkkishore85.github.io/tutorials/2024-07-17-quartotutorial-sharepoint-01/</a>.
+</div></div></section></div> ]]></description>
+  <category>R</category>
+  <category>R Tutorial</category>
+  <category>Quarto</category>
+  <category>Quarto Tutorial</category>
+  <category>Sharepoint</category>
+  <category>Teams</category>
+  <guid>jkkishore85.github.io/tutorials/2024-07-17-quartotutorial-sharepoint-01/</guid>
+  <pubDate>Tue, 16 Jul 2024 23:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and leaflet</title>
   <dc:creator>Kishore Kumar Jagadeesan</dc:creator>

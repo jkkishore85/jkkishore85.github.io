@@ -1,0 +1,204 @@
+---
+layout: post
+title: "Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams"
+author: 
+  - name: "Kishore Kumar Jagadeesan"
+    orcid: 0000-0003-0916-256X
+date: 2024-07-17
+draft: false
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 3
+    toc-title: On this page
+    toc-location: left
+    code-fold: true
+    code-block-border-left: true
+    code-line-numbers: true
+    code-copy: true
+    code-annotations: hover
+categories: [R, R Tutorial, Quarto, Quarto Tutorial, Sharepoint, Teams]
+citation: 
+  url: https://jkkishore85.github.io/tutorials/2024-07-17-quartotutorial-sharepoint-01/
+---
+
+::: {.callout-note title="TL;DR" icon="false"}
+This tutorial guides you through creating a self-contained HTML document using Quarto and sharing it on SharePoint or Microsoft Teams.
+
+1.  **Set Up**: Install Quarto, R, and RStudio.
+
+2.  **Create a Project**: Open RStudio and create a new Quarto project.
+
+3.  **Configure `_quarto.yml`**: Ensure your Quarto project configuration includes `self-contained: true`.
+
+4.  **Create Document**: Write your content in `index.qmd` and save it.
+
+5.  **Render Document**: Use `quarto_render` to generate a self-contained `index.html`.
+
+6.  **Upload and Share**: Upload the `index.html` to SharePoint or Teams and share the link.
+
+**Common Issues**:
+
+-   Check file paths and package installations if errors occur.
+
+-   Verify permissions and file size limits for SharePoint uploads.
+
+**Use Cases**:
+
+-   Data reports, project documentation, and educational materials.
+
+For more detailed steps and troubleshooting, refer to the full tutorial. Happy coding! 🚀
+:::
+
+# Introduction
+
+In this tutorial, you will learn how to create a self-contained HTML document using Quarto and share it on SharePoint or Microsoft Teams. A self-contained document embeds all resources, making it easy to distribute and share without external dependencies.
+
+# Background
+
+Quarto is a next-generation, open-source publishing system that allows you to create and share documents, presentations, websites, and more. It integrates seamlessly with `R`, `Python`, and `Julia`, making it a versatile tool for data scientists and analysts.
+
+**SharePoint** is a web-based collaborative platform that integrates with Microsoft Office. It is widely used for document management and storage, making it an ideal place to share your Quarto documents. Similarly, **Microsoft Teams** is a collaboration tool that allows you to share files and work together in real-time.
+
+::: {.callout-tip title="Why Self-Contained Documents?"}
+-   **Portability**: All resources (images, CSS, JS) are embedded in a single HTML file.
+-   **Ease of Sharing**: Simple to share via email or upload to platforms like SharePoint.
+-   **Offline Access**: Users can access the content without an internet connection.
+:::
+
+# Prerequisites
+
+-   **Quarto Installation**: Ensure Quarto is installed on your system. If not, follow the [installation guide](https://quarto.org/docs/get-started/) on the Quarto website.
+-   **R and RStudio**: Ensure you have R and RStudio installed. Quarto integrates well with R for generating dynamic documents.
+
+``` r
+install.packages(c("quarto", "rmarkdown",  "ggplot2"))
+```
+
+# Step-by-Step Guide
+
+## Step 1: Create a New Quarto Project
+
+1.  Open RStudio.
+2.  Create a New Project: Go to `File` \> `New Project`
+3.  Choose Project Type: Select `New Directory`, then `Quarto Project`.
+4.  Specify Project Details: Enter a project name and choose a directory. Click `Create Project`.
+5.  Load `R` libraries.
+
+```{r load_libraries, warning=FALSE, message=FALSE}
+library(quarto) # <1>
+library(rmarkdown) # <2>
+library(ggplot2) # <3>
+```
+
+1.  Load the `quarto` package for rendering Quarto documents.
+2.  Load the `rmarkdown` package, which provides rendering functions used by Quarto.
+3.  Load the `ggplot2` package for data visualization.
+
+## Step 2: Configure `_quarto.yml`
+
+1.  Locate `_quarto.yml`: In the root directory of your new Quarto project, find the `_quarto.yml` file.
+2.  Edit `_quarto.yml`: Open `_quarto.yml` and add the following content to configure the project for self-contained HTML output.
+
+``` yaml
+project:
+  type: website
+
+format:
+  html:
+    self-contained: true
+```
+
+## Step 3: Create a Quarto Document
+
+1.  ***Create a New Document:*** In RStudio, go to `File` \> `New File` \> `Quarto Document`.
+2.  ***Save the Document:*** Save the new document as `index.qmd` in your project directory.
+3.  ***Edit the Document:*** Add your content to `index.qmd.` Here is an example template:
+
+``` markdown
+---
+title: "Sample Quarto Document" 
+author: "Your Name" 
+date: "2024-07-17" 
+format: html
+---
+
+# Introduction
+
+This is a sample Quarto document that is self-contained and ready to be shared on SharePoint.
+
+## Data Visualization Example
+
+```r
+library(ggplot2) 
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() + 
+  theme_minimal()
+```
+
+## Step 4: Render the Quarto Document
+
+-   Render the Document: In RStudio, click the Render button or run the following command in the console:
+
+``` r
+quarto::quarto_render("index.qmd") # <1>
+```
+
+1.  Render the Quarto document to a self-contained HTML file
+
+-   Check Output: After rendering, you should see an `index.html` file in your project directory. This file is self-contained and includes all necessary resources.
+
+## Step 5: Upload to SharePoint
+
+-   ***Access SharePoint:*** Open your SharePoint site in a web browser.
+-   ***Navigate to Document Library:*** Go to the document library where you want to upload your file.
+-   ***Upload the HTML File:*** Click `Upload` and select the `index.html` file from your Quarto project directory.
+-   ***Share the Document:*** Once uploaded, you can share the document with others by generating a SharePoint link.
+
+::: {.callout-tip title="Rendering Quarto"}
+Use `Ctrl + Shift + K` in RStudio to quickly render your Quarto document.
+:::
+
+## Step 6: Verify and Share
+
+-   ***Verify the Document:*** Open the uploaded HTML file in SharePoint to ensure it displays correctly. \`- ***Share the Link:*** Copy the SharePoint link and share it with your audience.
+
+::: {.callout-caution title="Troubleshooting"}
+When things go wrong, here are some troubleshooting tips to help you diagnose and fix common issues:
+
+-   ***Incorrect File Paths:*** Ensure that the file paths in your `_quarto.yml` and document are correct. Check for typos or incorrect directory names.
+-   ***Missing Packages:*** If you encounter errors related to missing packages, ensure all required packages are installed. Use install.packages("packageName") to install any missing packages.
+-   ***Rendering Issues:*** If the document does not render correctly, check the console for error messages. Ensure that the self-contained: true option is correctly set in `_quarto.yml`.
+-   ***SharePoint Upload Problems:*** Ensure you have the necessary permissions to upload files to the SharePoint document library. Check the file size limit for uploads. Large files might need to be compressed or split.
+-   ***External Resource Loading:*** Ensure all external resources (e.g., images, scripts) are correctly embedded in the document. The self-contained option should handle this, but double-check if issues arise.
+:::
+
+# FAQs
+
+Q. Can I use other languages with Quarto?
+
+A. Yes, Quarto supports `R`, `Python`, and `Julia.` You can mix and match these languages within a single document.
+
+Q. How do I update my document?
+
+A. Simply edit the `.qmd` file and render it again using `quarto_render`. Upload the new `HTML` file to SharePoint or Teams to replace the old version.
+
+Q. Is there a way to version control my Quarto project?
+
+A. Yes, using Git for version control is highly recommended. It allows you to track changes, collaborate with others, and manage different versions of your project.
+
+# Conclusion
+
+By following these steps, you can create a self-contained HTML document using Quarto and share it on SharePoint. This ensures your document is portable, easy to share, and accessible without external dependencies. With this approach, you can effectively distribute your content and provide a seamless experience for your audience.
+
+# Additional Resources
+
+-   [Quarto Documentation](https://quarto.org/docs/).
+-   [RStudio](https://www.rstudio.com/)
+-   [SharePoint Help](https://support.microsoft.com/en-us/sharepoint)
+
+By mastering these steps, you can ensure your documents are well-prepared for sharing and distribution, enhancing your collaborative and presentation efforts.
+
+We hope you found this tutorial helpful. If you have any questions or feedback, please feel free to leave a comment below. We appreciate your input and are always looking to improve our content. Happy coding! 🚀

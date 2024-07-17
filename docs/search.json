@@ -14,6 +14,146 @@
     "text": "1 Course description\nIn today’s data-driven era, mastering data visualization is essential. This course equips you with practical skills to transform raw data into meaningful visual stories that drive understanding and decision-making. Whether you’re a data enthusiast or a professional looking to enhance your visualization prowess, this course offers invaluable insights and hands-on practice.\n\n\n2 Learning Objectives:\nBy the end of this course, participants will:\n\nIdentify appropriate visualization types for different datasets and audiences.\nPrepare data through cleaning, exploration, and formatting using R.\nCreate impactful, accessible, and visually appealing visualizations using ggplot2 and its extensions.\nDevelop proficiency in coding from scratch for data visualization tasks.\n\n\n\n3 Course Highlights:\n\nUnderstanding Data Visualization: Learn to identify the most suitable visualization types for your data and audience.\nData Preparation: Master techniques to clean, explore, and format data for visualization using R.\nBuilding Visualizations: Utilize R, including ggplot2 and its extensions, to craft impactful and visually engaging charts.\nHands-on Practice: From coding essentials to advanced techniques, gain practical insights through interactive learning.\n\n\n\n4 When is this taught?\nCourse Link: Course website Dates: May 14th and 15th, 2022\nAudience: Members of the Marie Curie Alumni Association - India Chapter\nSupported By: The Carpentries\nFunded By: Marie Curie Alumni Association\nThis course combined theoretical foundations with hands-on practice, empowering participants to leverage data visualization for impactful communication and decision-making. Stay tuned for future opportunities to advance your skills in data analysis and visualization with us!\n\n\n\n\nCitationBibTeX citation:@online{kumar jagadeesan2022,\n  author = {Kumar Jagadeesan, Kishore},\n  title = {Data {Analysis} and {Visualization} in {R}},\n  date = {2022-05-14},\n  url = {https://jkkishore85.github.io/courses/2022-05-14-workshop-mcaaindia/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nKumar Jagadeesan, Kishore. 2022. “Data Analysis and Visualization\nin R.” May 14, 2022. https://jkkishore85.github.io/courses/2022-05-14-workshop-mcaaindia/."
   },
   {
+    "objectID": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html",
+    "href": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html",
+    "title": "Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams",
+    "section": "",
+    "text": "TL;DR\n\n\n\nThis tutorial guides you through creating a self-contained HTML document using Quarto and sharing it on SharePoint or Microsoft Teams.\n\nSet Up: Install Quarto, R, and RStudio.\nCreate a Project: Open RStudio and create a new Quarto project.\nConfigure _quarto.yml: Ensure your Quarto project configuration includes self-contained: true.\nCreate Document: Write your content in index.qmd and save it.\nRender Document: Use quarto_render to generate a self-contained index.html.\nUpload and Share: Upload the index.html to SharePoint or Teams and share the link.\n\nCommon Issues:\n\nCheck file paths and package installations if errors occur.\nVerify permissions and file size limits for SharePoint uploads.\n\nUse Cases:\n\nData reports, project documentation, and educational materials.\n\nFor more detailed steps and troubleshooting, refer to the full tutorial. Happy coding! 🚀"
+  },
+  {
+    "objectID": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-1-create-a-new-quarto-project",
+    "href": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-1-create-a-new-quarto-project",
+    "title": "Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams",
+    "section": "4.1 Step 1: Create a New Quarto Project",
+    "text": "4.1 Step 1: Create a New Quarto Project\n\nOpen RStudio.\nCreate a New Project: Go to File &gt; New Project\nChoose Project Type: Select New Directory, then Quarto Project.\nSpecify Project Details: Enter a project name and choose a directory. Click Create Project.\nLoad R libraries.\n\n\n\nCode\n1library(quarto)\n2library(rmarkdown)\n3library(ggplot2)\n\n\n\n1\n\nLoad the quarto package for rendering Quarto documents.\n\n2\n\nLoad the rmarkdown package, which provides rendering functions used by Quarto.\n\n3\n\nLoad the ggplot2 package for data visualization."
+  },
+  {
+    "objectID": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-2-configure-_quarto.yml",
+    "href": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-2-configure-_quarto.yml",
+    "title": "Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams",
+    "section": "4.2 Step 2: Configure _quarto.yml",
+    "text": "4.2 Step 2: Configure _quarto.yml\n\nLocate _quarto.yml: In the root directory of your new Quarto project, find the _quarto.yml file.\nEdit _quarto.yml: Open _quarto.yml and add the following content to configure the project for self-contained HTML output.\n\nproject:\n  type: website\n\nformat:\n  html:\n    self-contained: true"
+  },
+  {
+    "objectID": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-3-create-a-quarto-document",
+    "href": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-3-create-a-quarto-document",
+    "title": "Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams",
+    "section": "4.3 Step 3: Create a Quarto Document",
+    "text": "4.3 Step 3: Create a Quarto Document\n\nCreate a New Document: In RStudio, go to File &gt; New File &gt; Quarto Document.\nSave the Document: Save the new document as index.qmd in your project directory.\nEdit the Document: Add your content to index.qmd. Here is an example template:\n\n---\ntitle: \"Sample Quarto Document\" \nauthor: \"Your Name\" \ndate: \"2024-07-17\" \nformat: html\n---\n\n# Introduction\n\nThis is a sample Quarto document that is self-contained and ready to be shared on SharePoint.\n\n## Data Visualization Example\n\n```r\nlibrary(ggplot2) \n\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point() + \n  theme_minimal()"
+  },
+  {
+    "objectID": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-4-render-the-quarto-document",
+    "href": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-4-render-the-quarto-document",
+    "title": "Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams",
+    "section": "4.4 Step 4: Render the Quarto Document",
+    "text": "4.4 Step 4: Render the Quarto Document\n\nRender the Document: In RStudio, click the Render button or run the following command in the console:\n\n1quarto::quarto_render(\"index.qmd\")\n\n1\n\nRender the Quarto document to a self-contained HTML file\n\n\n\nCheck Output: After rendering, you should see an index.html file in your project directory. This file is self-contained and includes all necessary resources."
+  },
+  {
+    "objectID": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-5-upload-to-sharepoint",
+    "href": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-5-upload-to-sharepoint",
+    "title": "Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams",
+    "section": "4.5 Step 5: Upload to SharePoint",
+    "text": "4.5 Step 5: Upload to SharePoint\n\nAccess SharePoint: Open your SharePoint site in a web browser.\nNavigate to Document Library: Go to the document library where you want to upload your file.\nUpload the HTML File: Click Upload and select the index.html file from your Quarto project directory.\nShare the Document: Once uploaded, you can share the document with others by generating a SharePoint link.\n\n\n\n\n\n\n\nRendering Quarto\n\n\n\nUse Ctrl + Shift + K in RStudio to quickly render your Quarto document."
+  },
+  {
+    "objectID": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-6-verify-and-share",
+    "href": "tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html#step-6-verify-and-share",
+    "title": "Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams",
+    "section": "4.6 Step 6: Verify and Share",
+    "text": "4.6 Step 6: Verify and Share\n\nVerify the Document: Open the uploaded HTML file in SharePoint to ensure it displays correctly. `- Share the Link: Copy the SharePoint link and share it with your audience.\n\n\n\n\n\n\n\nTroubleshooting\n\n\n\nWhen things go wrong, here are some troubleshooting tips to help you diagnose and fix common issues:\n\nIncorrect File Paths: Ensure that the file paths in your _quarto.yml and document are correct. Check for typos or incorrect directory names.\nMissing Packages: If you encounter errors related to missing packages, ensure all required packages are installed. Use install.packages(“packageName”) to install any missing packages.\nRendering Issues: If the document does not render correctly, check the console for error messages. Ensure that the self-contained: true option is correctly set in _quarto.yml.\nSharePoint Upload Problems: Ensure you have the necessary permissions to upload files to the SharePoint document library. Check the file size limit for uploads. Large files might need to be compressed or split.\nExternal Resource Loading: Ensure all external resources (e.g., images, scripts) are correctly embedded in the document. The self-contained option should handle this, but double-check if issues arise."
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "0.0.1 2022\nKasprzyk-Hordern, B., Proctor, K., Jagadeesan, K., Edler, F., Standerwick, R. and Barden, R., 2022. Human population as a key driver of biochemical burden in an inter-city system: Implications for One Health concept. Journal of Hazardous Materials, 429, p.127882.\n\n\n0.0.2 2021\nKasprzyk-Hordern, B., Proctor, K., Jagadeesan, K., Watkins, S., Standerwick, R., Barden, R. and Barnett, J., 2021. Diagnosing Down-the-Drain Disposal of Unused Pharmaceuticals at a River Catchment Level: Unrecognized Sources of Environmental Contamination That Require Nontechnological Solutions. Environmental science & technology, 55(17), pp.11657-11666.\nGibbon, M.J., Couto, N., David, S., Barden, R., Standerwick, R., Jagadeesan, K., Birkwood, H., Dulyayangkul, P., Avison, M.B., Kannan, A. and Kibbey, D., 2021. A high prevalence of bla OXA-48 in Klebsiella (Raoultella) ornithinolytica and related species in hospital wastewater in South West England. Microbial genomics, 7(3). #### 2020\nB Kasprzyk-Hordern, K Proctor, K Jagadeesan, L Lopardo, K J O’Daly, R Standerwick, R Barden Estimation of community-wide multi-chemical exposure via water-based chemical mining: Key research gaps drawn from a comprehensive multi-biomarker multi-city dataset Environment International 147, 106331\nJ Rice, AM Kannan, E Castrignanò, K Jagadeesan, B Kasprzyk-Hordern Wastewater-based epidemiology combined with local prescription analysis as a tool for temporalmonitoring of drugs trends-A UK perspective Science of The Total Environment, 735, 139433\n\n\n0.0.3 2017\nKK Jagadeesan and S Ekström MALDIViz: a comprehensive informatics tool for MALDI-MS data visualization and analysis SLAS DISCOVERY: Advancing Life Sciences R&D 22 (10), 1246-1252 2017\nM Duarte, KK Jagadeesan, J Billing, E Yilmaz, T Laurell and S Ekström Solid-phase extraction of the alcohol abuse biomarker phosphatidylethanol using newly synthesized polymeric sorbent materials containing quaternary heterocyclic groups Journal of Chromatography A 1519, 1-8 2017\nKK Jagadeesan, C Rossetti, AA Qader, L Reubsaet, B Sellergren, T Laurell and S Ekström Filter Plate–Based Screening of MIP SPE Materials for Capture of the Biomarker Pro-Gastrin-Releasing Peptide SLAS Discovery 22 (10), 1253-1261 2017\n\n\n0.0.4 2016\nX Shen, C Huang, S Shinde, KK Jagadeesan, S Ekström, E Fritz and B Sellergren Catalytic formation of disulfide bonds in peptides by molecularly imprinted microgels at oil/water interfaces ACS applied materials & interfaces 8 (44), 30484-30491 2016\nKK Jagadeesan, C Wierzbicka, T Laurell, B Sellergren, S Shinde and S Ekstrom Multiplexed MALDI-MS arrays for screening of MIP solid phase extraction materials Journal of Chromatography B 1021, 213-220 2016\n\n\n0.0.5 2013\nS Kumar, KK Jagadeesan, AG Joshi, G Sumana, Immuno-CoPS (conducting paper strips) for futuristic cost-effective cancer diagnostics RSC Advances 3 (29), 11846-11853 2013\nKK Jagadeesan, S Kumar, G Sumana Application of conducting paper for selective detection of troponin Electrochemistry Communications 20, 71-74"
+  },
+  {
+    "objectID": "projects/2023-02-21-perk/index.html",
+    "href": "projects/2023-02-21-perk/index.html",
+    "title": "PERK",
+    "section": "",
+    "text": "Project Page    Source Code \nPERK, an acronym for Predicting Environmental concentration and RisK, is an R/Shiny application tool. It is designed to facilitate automated modelling and reporting of predicted environmental concentrations of a comprehensive set of pharmaceuticals derived from a wide range of therapeutic classes with different modes of action.\nThe tool allows users to input their measured concentration, and compare the predicted (PEC) and measured concentrations (MEC) of the pharmaceuticals by means of the PEC/MEC ratio. This helps to establish whether the predicted equations used tend to underestimate or overestimate measured values.\nPERK provides a consistent interactive user interface in a familiar dashboard layout, enabling users to visualize predicted values and compare them with their measured values without any hassles¹². Users can download data and graphs generated using the tool in .csv format or as publication-ready images.\nThe tool uses prescription data from PrAna, an R package to calculate and visualize England NHS prescribing data. It also uses data from WWTP collaborators, API properties, recovery percentage, physio-chemical properties, and eco-toxicity data collected from research articles and data repositories.\nPERK is easy to install and use. With just a few commands, users can install it and begin using it. For an introduction to the package, step-by-step instructions on getting started, and more information on the different ways you can use the package, users can refer to the PERK-Walkthrough tutorial.\nThis work is a part of the Wastewater Fingerprinting for Public Health Assessment (ENTRUST) project funded by Wessex Water and EPSRC IAA (grant no. EP/R51164X/1). If the package helps you with your work in any way that justifies it, please cite the article published in Science of The Total Environment(Jagadeesan, Barden, and Kasprzyk-Hordern 2023).\n\n\n\n\nReferences\n\nJagadeesan, Kishore Kumar, Ruth Barden, and Barbara Kasprzyk-Hordern. 2023. “PERK: An R/Shiny Application to Predict and Visualise Concentrations of Pharmaceuticals in the Aqueous Environment.” Science of The Total Environment 875 (June): 162352. https://doi.org/10.1016/j.scitotenv.2023.162352."
+  },
+  {
+    "objectID": "projects/2017-12-01-maldiviz/index.html",
+    "href": "projects/2017-12-01-maldiviz/index.html",
+    "title": "MALDIViz",
+    "section": "",
+    "text": "Shiny Dashboard \nMALDIViz: A Comprehensive Informatics Tool for MALDI-MS Data Visualization and Analysis\nMALDIViz is a comprehensive informatics tool designed to address the challenges posed by the large datasets generated by high-throughput screening (HTS) using matrix-assisted laser desorption/ionization mass spectrometry (MALDI-MS). This technique is widely used in HTS due to its low cost, speed, and automation capabilities.\nThe complexity of the experimental data, such as screening many different sorbent phases, the sorbent mass, and the load, wash, and elution conditions, makes manual data analysis difficult. To overcome these challenges, MALDIViz was developed.\nMALDIViz is an R-Shiny-based web application, accessible independently of the operating system and without the need to install any program locally. It has been designed to facilitate easy analysis and visualization of MALDI-MS datasets, comparison of multiplex experiments, and export of the analysis results to high-quality images.\nKey Features:\n\nData Visualization: MALDIViz provides a robust platform for visualizing complex MALDI-MS datasets. This feature allows users to gain insights from their data in a graphical format, making it easier to interpret and understand the results.\nStatistical Analysis: The tool includes built-in functions for performing statistical analysis on the data. This can help users identify significant patterns and trends in their datasets.\nComparison of Multiplex Experiments: MALDIViz allows users to compare results from multiple experiments. This can be particularly useful when trying to understand the effects of different variables on the results.\nHigh-Quality Image and Data Export: Users can export the analysis results as high-quality images¹. This feature makes it easy to share the results with others or use them in presentations and reports.\nAccessibility: MALDIViz is an R-Shiny-based web application, which means it can be accessed independently of the operating system and without the need to install any program locally.\n\n\n\n\nMALDIViz: Workflow and Features\n\n\nThese features make MALDIViz a versatile and powerful tool for researchers working with MALDI-MS data. It was published in the journal SLAS DISCOVERY: Advancing Life Sciences R&D(Jagadeesan and Ekström 2017)¹.\n\n\n\n\nReferences\n\nJagadeesan, Kishore Kumar, and Simon Ekström. 2017. “MALDIViz: A Comprehensive Informatics Tool for MALDI-MS Data Visualization and Analysis.” SLAS Discovery 22 (10): 1246–52. https://doi.org/10.1177/2472555217727517."
+  },
+  {
+    "objectID": "posts/2024-07-11-newlook/index.html",
+    "href": "posts/2024-07-11-newlook/index.html",
+    "title": "New Look",
+    "section": "",
+    "text": "CitationBibTeX citation:@online{kumar jagadeesan2024,\n  author = {Kumar Jagadeesan, Kishore},\n  title = {New {Look}},\n  date = {2024-07-11},\n  url = {https://jkkishore85.github.io/mysite/posts/2024-07-11-newlook/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nKumar Jagadeesan, Kishore. 2024. “New Look.” July 11, 2024.\nhttps://jkkishore85.github.io/mysite/posts/2024-07-11-newlook/."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello! I’m Kishore Jagadeesan, a Postdoctoral Research Associate at the Department of Chemistry, University of Bath, UK. I’m passionate about the environment, water quality, and public health.\nMy work primarily involves developing research tools for statistical analysis and visualization of massive datasets across many disciplines. I’m highly proficient in coding with R and HTML. One of my notable contributions is the development of PERK, an R/Shiny application tool that predicts and visualizes environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution.\nI’m always excited to connect with others who share similar interests. I’m also open to discussions about R Shiny, mass spectrometry, data visualization, and wastewater epidemiology.\nFor more information on my past work and contributions, feel free to explore my website and my GitHub profile. Thank you for visiting!"
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello! I’m Kishore Jagadeesan, a Postdoctoral Research Associate at the Department of Chemistry, University of Bath, UK. I’m passionate about the environment, water quality, and public health.\nMy work primarily involves developing research tools for statistical analysis and visualization of massive datasets across many disciplines. I’m highly proficient in coding with R and HTML. One of my notable contributions is the development of PERK, an R/Shiny application tool that predicts and visualizes environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution.\nI’m always excited to connect with others who share similar interests. I’m also open to discussions about R Shiny, mass spectrometry, data visualization, and wastewater epidemiology.\nFor more information on my past work and contributions, feel free to explore my website and my GitHub profile. Thank you for visiting!"
+  },
+  {
+    "objectID": "about.html#intrests",
+    "href": "about.html#intrests",
+    "title": "About Me",
+    "section": "2 Intrests",
+    "text": "2 Intrests\n\nAnalytical Chemistry\nR programming\nPublic health\nEnvironmental Monitoring\nAI"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "3 Experience",
+    "text": "3 Experience\nPost-doctoral Research Associate | 2018 - Current\nUniversity of Bath | Bath, UK\nMarie Curie Early Stage Researcher - PhD student | 2013 - 2017\nLund University | Lund, Sweden\nProject Assistant - Level II | 2011 - 2012 National Physical Laboratory | New Delhi, India\nJunior Executive (Production) | 2006 - 2008 Biocon | Bengaluru, India"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "4 Education",
+    "text": "4 Education\nPhD, Biomedical Engineering | 2013 - 2017\nLund University | Lund, Sweden\nMaster of Science, MSc, Analytical Chemistry | 2008 - 2010\nUniversity of Madras | Chennai, India\nBachelor of Science, BSc, Chemistry | 2003 - 2006\nPSG College of Arts and Science | Coimbatore, India"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Kishore Kumar Jagadeesan",
+    "section": "",
+    "text": "Hello! I’m Kishore Kumar Jagadeesan, a Research Associate with a passion for environmental science, water quality, and public health. Currently, I’m @ the University of Bath , where I excel in creating research tools for statistical analysis and data visualization across diverse disciplines. Feel free to explore my website to learn more!"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "New Look\n\n\n\nQuarto\n\n\nR\n\n\n\nNew look for the website\n\n\n\nKishore Kumar Jagadeesan\n\n\nJul 11, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/2022-01-06-prana/index.html",
+    "href": "projects/2022-01-06-prana/index.html",
+    "title": "PrAna",
+    "section": "",
+    "text": "Project Page    Source Code \nIntroducing PrAna: A Powerful Tool for Analysing England’s NHS Primary Care Prescribing Data\nIn the realm of healthcare and environmental science, understanding the consumption of active pharmaceutical ingredients (APIs) is crucial. PrAna emerges as a ground breaking tool that brings a new dimension to the analysis of England’s NHS primary care prescribing data.\nDeveloped as an R package, PrAna is designed to aggregate and normalize England’s national level prescription data. It calculates the total prescribed quantity of different APIs, using open source statistical software R language. This data is vital for predicting the total amount of APIs released into the environment.\nPrAna is complemented by a user-friendly interactive tool, PrAnaViz, developed using the R/Shiny framework. This tool allows users to explore and visualize the spatio-temporal trends of the total prescribed quantity of APIs. Users can also download the results in various data formats for their further studies.\nWith PrAna and PrAnaViz, users can visualize, explore, and report different spatio-temporal and long-term prescription trends for wider use. This can be used as a support tool for policy-makers, academics, researchers in public healthcare, and environmental scientists to monitor different groups of pharmaceuticals emitted to the environment and for prospective risk assessment of pharmaceuticals in the environment.\nPublished in the esteemed journal BMC Medical Informatics and Decision Making(Jagadeesan et al. 2022), PrAna is a significant contribution to the field, empowering researchers to efficiently handle and interpret complex prescription data.\nExplore the Features of PrAna\nPrAna is packed with features that make it a versatile tool for any researcher working with England’s NHS primary care prescribing data:\n\nData Aggregation and Normalization: Transform your complex prescription datasets into easy-to-understand formats.\nAPI Consumption Calculation: Calculate the total prescribed quantity of different APIs, vital for predicting the total amount of APIs released into the environment.\nInteractive Visualization: Explore and visualize the spatio-temporal trends of the total prescribed quantity of APIs with PrAnaViz.\nData Export: Download the results in various data formats for your further studies.\nAccessibility: Access PrAna from any operating system without the need for local installation.\n\nWith PrAna, navigating through the complexities of England’s NHS primary care prescribing data has never been easier.\n\n\n\n\nReferences\n\nJagadeesan, Kishore Kumar, James Grant, Sue Griffin, Ruth Barden, and Barbara Kasprzyk-Hordern. 2022. “PrAna: An R Package to Calculate and Visualize England NHS Primary Care Prescribing Data.” BMC Medical Informatics and Decision Making 22 (1). https://doi.org/10.1186/s12911-021-01727-z."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "My Projects",
+    "section": "",
+    "text": "PERK\n\n\n\nR/Shiny\n\n\nR\n\n\nR package\n\n\nPrescription\n\n\ndata-visualization\n\n\nPublic Health\n\n\nEnvironmental Monitoring\n\n\n\nAdvanced Predictive Tool for Environmental Risk Assessment\n\n\n\nKishore Kumar Jagadeesan\n\n\nFeb 21, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPrAna\n\n\n\nR/Shiny\n\n\nR\n\n\nR package\n\n\nPrescription\n\n\ndata-visualization\n\n\nPublic Health\n\n\n\nTransforming the Analysis and Visualization of England’s NHS Primary Care Prescribing Data\n\n\n\nKishore Kumar Jagadeesan\n\n\nJan 6, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMALDIViz\n\n\n\nR/Shiny\n\n\nR\n\n\nMass Spectrometry\n\n\ndata-visualization\n\n\nProteomics\n\n\n\nUnleashing the Power of MALDI-MS Data Analysis with MALDIViz\n\n\n\nKishore Kumar Jagadeesan\n\n\nDec 1, 2017\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "tutorials/2024-07-11-rtutorial-map-01/index.html",
     "href": "tutorials/2024-07-11-rtutorial-map-01/index.html",
     "title": "Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and leaflet",
@@ -91,102 +231,11 @@
     "text": "5.2 Advanced leaflet Features\nFor interactive maps, leaflet offers advanced features that allow you to add layers, custom controls, and integrate with other web technologies.\n\n\n\n\n\n\nPolygons and Circles\n\n\n\nUse addPolygons() and addCircles() to highlight specific areas on your map.\n\n\n\n\nCode\n1leaflet_map &lt;- leaflet::leaflet() %&gt;%\n2  leaflet::addTiles() %&gt;%\n3  leaflet::addMarkers(lng = -0.09, lat = 51.505, popup = \"Hello, London!\") %&gt;%\n4  leaflet::addCircles(lng = -0.1, lat = 51.51, weight = 1, radius = 50,\n5             popup = \"Circle around another location\")\n6leaflet_map\n\n\n\n1\n\nInitialize a leaflet map object.\n\n2\n\nAdd default OpenStreetMap tiles to the map.\n\n3\n\nAdd a marker at the specified longitude and latitude with a popup message.\n\n4\n\nAdd a circle at the specified longitude and latitude with a specified weight and radius.\n\n5\n\nAdd a popup message for the circle.\n\n6\n\nDisplay the map.\n\n\n\n\n\n\n\n\nThese advanced features in ggplot2 and leaflet enable you to create detailed, informative, and visually appealing maps, whether they are static or interactive. By leveraging these tools, you can effectively communicate geographic data to your audience.\n\n\n\n\n\n\nCommon Mistakes\n\n\n\nWhen creating maps in R, there are a few common mistakes that can lead to errors or unexpected results. Here are some tips to help you avoid these pitfalls:\n\nWrong Coordinates: Ensure your longitude and latitude values are correct; otherwise, your markers will not appear where expected.\nMissing Libraries: Always load the necessary libraries before running your code.\nIncorrect Data Types: Make sure your longitude and latitude columns are numeric. If they are factors or characters, convert them using as.numeric().\nMismatched Coordinate Reference Systems (CRS): Ensure your spatial data and map layers use the same CRS to avoid misalignment.\nOverlapping Layers: Be careful with the order of layers in ggplot2. Layers added later will be on top of earlier ones, which might obscure important data.\nImproper Aesthetics Mapping: Double-check that the aes() function correctly maps your data columns to aesthetics in ggplot2.\nForgetting to Print the Plot: In scripts or R Markdown documents, ensure you explicitly print the ggplot object to render the plot.\nLarge Data Sets: For very large spatial data sets, rendering can be slow. Consider simplifying your data or using more efficient packages like sf.\nIncorrect File Paths: When loading spatial data from files, ensure the file paths are correct and the files are accessible.\nNot Saving Plots: If you want to save your plots, use functions like ggsave() for ggplot2 maps and htmlwidgets::saveWidget() for leaflet maps.\n\n\n\n\n\n\n\n\n\nTroubleshooting\n\n\n\nWhen things go wrong, here are some troubleshooting tips to help you diagnose and fix common issues:\n\nError: Object not found: Ensure all objects (e.g., data frames, variables) are defined in your environment.\nMap not displaying: Check your longitude and latitude values and ensure your map container is correctly set up if embedding in a Shiny app or R Markdown document.\nIncorrect CRS: If your spatial data doesn’t align, check and transform CRS using functions like st_transform() from the sf package.\nSlow Performance: If rendering is slow, consider reducing the complexity of your spatial data, using faster algorithms, or rendering smaller sections of the map.\nLayer Ordering Issues: If some layers are hidden, reorder your ggplot2 layers to ensure that important data is not obscured.\nLibrary Conflicts: Sometimes, functions from different libraries can conflict. Ensure you are calling functions with the correct namespace (e.g., ggplot2::geom_point()).\nMissing Data: Check for NA values in your data, especially in critical columns like longitude and latitude. Handle missing data appropriately.\nPlot Size: If your plot appears squished or improperly scaled, adjust the plot dimensions using ggsave() or fig.width and fig.height in R Markdown.\nBrowser Compatibility: For leaflet maps, ensure you are using a compatible web browser, and try refreshing the page if the map does not load.\nDependency Issues: Make sure all necessary packages and their dependencies are installed and up to date. Use install.packages() to install missing packages.\nResource Limits: For interactive maps, ensure your system has sufficient resources (memory, processing power) to handle large datasets and complex visualizations."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "My Projects",
-    "section": "",
-    "text": "PERK\n\n\n\nR/Shiny\n\n\nR\n\n\nR package\n\n\nPrescription\n\n\ndata-visualization\n\n\nPublic Health\n\n\nEnvironmental Monitoring\n\n\n\nAdvanced Predictive Tool for Environmental Risk Assessment\n\n\n\nKishore Kumar Jagadeesan\n\n\nFeb 21, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nPrAna\n\n\n\nR/Shiny\n\n\nR\n\n\nR package\n\n\nPrescription\n\n\ndata-visualization\n\n\nPublic Health\n\n\n\nTransforming the Analysis and Visualization of England’s NHS Primary Care Prescribing Data\n\n\n\nKishore Kumar Jagadeesan\n\n\nJan 6, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMALDIViz\n\n\n\nR/Shiny\n\n\nR\n\n\nMass Spectrometry\n\n\ndata-visualization\n\n\nProteomics\n\n\n\nUnleashing the Power of MALDI-MS Data Analysis with MALDIViz\n\n\n\nKishore Kumar Jagadeesan\n\n\nDec 1, 2017\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/2022-01-06-prana/index.html",
-    "href": "projects/2022-01-06-prana/index.html",
-    "title": "PrAna",
-    "section": "",
-    "text": "Project Page    Source Code \nIntroducing PrAna: A Powerful Tool for Analysing England’s NHS Primary Care Prescribing Data\nIn the realm of healthcare and environmental science, understanding the consumption of active pharmaceutical ingredients (APIs) is crucial. PrAna emerges as a ground breaking tool that brings a new dimension to the analysis of England’s NHS primary care prescribing data.\nDeveloped as an R package, PrAna is designed to aggregate and normalize England’s national level prescription data. It calculates the total prescribed quantity of different APIs, using open source statistical software R language. This data is vital for predicting the total amount of APIs released into the environment.\nPrAna is complemented by a user-friendly interactive tool, PrAnaViz, developed using the R/Shiny framework. This tool allows users to explore and visualize the spatio-temporal trends of the total prescribed quantity of APIs. Users can also download the results in various data formats for their further studies.\nWith PrAna and PrAnaViz, users can visualize, explore, and report different spatio-temporal and long-term prescription trends for wider use. This can be used as a support tool for policy-makers, academics, researchers in public healthcare, and environmental scientists to monitor different groups of pharmaceuticals emitted to the environment and for prospective risk assessment of pharmaceuticals in the environment.\nPublished in the esteemed journal BMC Medical Informatics and Decision Making(Jagadeesan et al. 2022), PrAna is a significant contribution to the field, empowering researchers to efficiently handle and interpret complex prescription data.\nExplore the Features of PrAna\nPrAna is packed with features that make it a versatile tool for any researcher working with England’s NHS primary care prescribing data:\n\nData Aggregation and Normalization: Transform your complex prescription datasets into easy-to-understand formats.\nAPI Consumption Calculation: Calculate the total prescribed quantity of different APIs, vital for predicting the total amount of APIs released into the environment.\nInteractive Visualization: Explore and visualize the spatio-temporal trends of the total prescribed quantity of APIs with PrAnaViz.\nData Export: Download the results in various data formats for your further studies.\nAccessibility: Access PrAna from any operating system without the need for local installation.\n\nWith PrAna, navigating through the complexities of England’s NHS primary care prescribing data has never been easier.\n\n\n\n\nReferences\n\nJagadeesan, Kishore Kumar, James Grant, Sue Griffin, Ruth Barden, and Barbara Kasprzyk-Hordern. 2022. “PrAna: An R Package to Calculate and Visualize England NHS Primary Care Prescribing Data.” BMC Medical Informatics and Decision Making 22 (1). https://doi.org/10.1186/s12911-021-01727-z."
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "My Blog",
-    "section": "",
-    "text": "New Look\n\n\n\nQuarto\n\n\nR\n\n\n\nNew look for the website\n\n\n\nKishore Kumar Jagadeesan\n\n\nJul 11, 2024\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Kishore Kumar Jagadeesan",
-    "section": "",
-    "text": "Hello! I’m Kishore Kumar Jagadeesan, a Research Associate with a passion for environmental science, water quality, and public health. Currently, I’m @ the University of Bath , where I excel in creating research tools for statistical analysis and data visualization across diverse disciplines. Feel free to explore my website to learn more!"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "Hello! I’m Kishore Jagadeesan, a Postdoctoral Research Associate at the Department of Chemistry, University of Bath, UK. I’m passionate about the environment, water quality, and public health.\nMy work primarily involves developing research tools for statistical analysis and visualization of massive datasets across many disciplines. I’m highly proficient in coding with R and HTML. One of my notable contributions is the development of PERK, an R/Shiny application tool that predicts and visualizes environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution.\nI’m always excited to connect with others who share similar interests. I’m also open to discussions about R Shiny, mass spectrometry, data visualization, and wastewater epidemiology.\nFor more information on my past work and contributions, feel free to explore my website and my GitHub profile. Thank you for visiting!"
-  },
-  {
-    "objectID": "about.html#about-me",
-    "href": "about.html#about-me",
-    "title": "About Me",
-    "section": "",
-    "text": "Hello! I’m Kishore Jagadeesan, a Postdoctoral Research Associate at the Department of Chemistry, University of Bath, UK. I’m passionate about the environment, water quality, and public health.\nMy work primarily involves developing research tools for statistical analysis and visualization of massive datasets across many disciplines. I’m highly proficient in coding with R and HTML. One of my notable contributions is the development of PERK, an R/Shiny application tool that predicts and visualizes environmental concentration and risk using pharmaceutical prescription data collected at fine spatial resolution.\nI’m always excited to connect with others who share similar interests. I’m also open to discussions about R Shiny, mass spectrometry, data visualization, and wastewater epidemiology.\nFor more information on my past work and contributions, feel free to explore my website and my GitHub profile. Thank you for visiting!"
-  },
-  {
-    "objectID": "about.html#intrests",
-    "href": "about.html#intrests",
-    "title": "About Me",
-    "section": "2 Intrests",
-    "text": "2 Intrests\n\nAnalytical Chemistry\nR programming\nPublic health\nEnvironmental Monitoring\nAI"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About Me",
-    "section": "3 Experience",
-    "text": "3 Experience\nPost-doctoral Research Associate | 2018 - Current\nUniversity of Bath | Bath, UK\nMarie Curie Early Stage Researcher - PhD student | 2013 - 2017\nLund University | Lund, Sweden\nProject Assistant - Level II | 2011 - 2012 National Physical Laboratory | New Delhi, India\nJunior Executive (Production) | 2006 - 2008 Biocon | Bengaluru, India"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
-    "section": "4 Education",
-    "text": "4 Education\nPhD, Biomedical Engineering | 2013 - 2017\nLund University | Lund, Sweden\nMaster of Science, MSc, Analytical Chemistry | 2008 - 2010\nUniversity of Madras | Chennai, India\nBachelor of Science, BSc, Chemistry | 2003 - 2006\nPSG College of Arts and Science | Coimbatore, India"
-  },
-  {
-    "objectID": "posts/2024-07-11-newlook/index.html",
-    "href": "posts/2024-07-11-newlook/index.html",
-    "title": "New Look",
-    "section": "",
-    "text": "CitationBibTeX citation:@online{kumar jagadeesan2024,\n  author = {Kumar Jagadeesan, Kishore},\n  title = {New {Look}},\n  date = {2024-07-11},\n  url = {https://jkkishore85.github.io/mysite/posts/2024-07-11-newlook/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nKumar Jagadeesan, Kishore. 2024. “New Look.” July 11, 2024.\nhttps://jkkishore85.github.io/mysite/posts/2024-07-11-newlook/."
-  },
-  {
-    "objectID": "projects/2017-12-01-maldiviz/index.html",
-    "href": "projects/2017-12-01-maldiviz/index.html",
-    "title": "MALDIViz",
-    "section": "",
-    "text": "Shiny Dashboard \nMALDIViz: A Comprehensive Informatics Tool for MALDI-MS Data Visualization and Analysis\nMALDIViz is a comprehensive informatics tool designed to address the challenges posed by the large datasets generated by high-throughput screening (HTS) using matrix-assisted laser desorption/ionization mass spectrometry (MALDI-MS). This technique is widely used in HTS due to its low cost, speed, and automation capabilities.\nThe complexity of the experimental data, such as screening many different sorbent phases, the sorbent mass, and the load, wash, and elution conditions, makes manual data analysis difficult. To overcome these challenges, MALDIViz was developed.\nMALDIViz is an R-Shiny-based web application, accessible independently of the operating system and without the need to install any program locally. It has been designed to facilitate easy analysis and visualization of MALDI-MS datasets, comparison of multiplex experiments, and export of the analysis results to high-quality images.\nKey Features:\n\nData Visualization: MALDIViz provides a robust platform for visualizing complex MALDI-MS datasets. This feature allows users to gain insights from their data in a graphical format, making it easier to interpret and understand the results.\nStatistical Analysis: The tool includes built-in functions for performing statistical analysis on the data. This can help users identify significant patterns and trends in their datasets.\nComparison of Multiplex Experiments: MALDIViz allows users to compare results from multiple experiments. This can be particularly useful when trying to understand the effects of different variables on the results.\nHigh-Quality Image and Data Export: Users can export the analysis results as high-quality images¹. This feature makes it easy to share the results with others or use them in presentations and reports.\nAccessibility: MALDIViz is an R-Shiny-based web application, which means it can be accessed independently of the operating system and without the need to install any program locally.\n\n\n\n\nMALDIViz: Workflow and Features\n\n\nThese features make MALDIViz a versatile and powerful tool for researchers working with MALDI-MS data. It was published in the journal SLAS DISCOVERY: Advancing Life Sciences R&D(Jagadeesan and Ekström 2017)¹.\n\n\n\n\nReferences\n\nJagadeesan, Kishore Kumar, and Simon Ekström. 2017. “MALDIViz: A Comprehensive Informatics Tool for MALDI-MS Data Visualization and Analysis.” SLAS Discovery 22 (10): 1246–52. https://doi.org/10.1177/2472555217727517."
-  },
-  {
-    "objectID": "projects/2023-02-21-perk/index.html",
-    "href": "projects/2023-02-21-perk/index.html",
-    "title": "PERK",
-    "section": "",
-    "text": "Project Page    Source Code \nPERK, an acronym for Predicting Environmental concentration and RisK, is an R/Shiny application tool. It is designed to facilitate automated modelling and reporting of predicted environmental concentrations of a comprehensive set of pharmaceuticals derived from a wide range of therapeutic classes with different modes of action.\nThe tool allows users to input their measured concentration, and compare the predicted (PEC) and measured concentrations (MEC) of the pharmaceuticals by means of the PEC/MEC ratio. This helps to establish whether the predicted equations used tend to underestimate or overestimate measured values.\nPERK provides a consistent interactive user interface in a familiar dashboard layout, enabling users to visualize predicted values and compare them with their measured values without any hassles¹². Users can download data and graphs generated using the tool in .csv format or as publication-ready images.\nThe tool uses prescription data from PrAna, an R package to calculate and visualize England NHS prescribing data. It also uses data from WWTP collaborators, API properties, recovery percentage, physio-chemical properties, and eco-toxicity data collected from research articles and data repositories.\nPERK is easy to install and use. With just a few commands, users can install it and begin using it. For an introduction to the package, step-by-step instructions on getting started, and more information on the different ways you can use the package, users can refer to the PERK-Walkthrough tutorial.\nThis work is a part of the Wastewater Fingerprinting for Public Health Assessment (ENTRUST) project funded by Wessex Water and EPSRC IAA (grant no. EP/R51164X/1). If the package helps you with your work in any way that justifies it, please cite the article published in Science of The Total Environment(Jagadeesan, Barden, and Kasprzyk-Hordern 2023).\n\n\n\n\nReferences\n\nJagadeesan, Kishore Kumar, Ruth Barden, and Barbara Kasprzyk-Hordern. 2023. “PERK: An R/Shiny Application to Predict and Visualise Concentrations of Pharmaceuticals in the Aqueous Environment.” Science of The Total Environment 875 (June): 162352. https://doi.org/10.1016/j.scitotenv.2023.162352."
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "0.0.1 2022\nKasprzyk-Hordern, B., Proctor, K., Jagadeesan, K., Edler, F., Standerwick, R. and Barden, R., 2022. Human population as a key driver of biochemical burden in an inter-city system: Implications for One Health concept. Journal of Hazardous Materials, 429, p.127882.\n\n\n0.0.2 2021\nKasprzyk-Hordern, B., Proctor, K., Jagadeesan, K., Watkins, S., Standerwick, R., Barden, R. and Barnett, J., 2021. Diagnosing Down-the-Drain Disposal of Unused Pharmaceuticals at a River Catchment Level: Unrecognized Sources of Environmental Contamination That Require Nontechnological Solutions. Environmental science & technology, 55(17), pp.11657-11666.\nGibbon, M.J., Couto, N., David, S., Barden, R., Standerwick, R., Jagadeesan, K., Birkwood, H., Dulyayangkul, P., Avison, M.B., Kannan, A. and Kibbey, D., 2021. A high prevalence of bla OXA-48 in Klebsiella (Raoultella) ornithinolytica and related species in hospital wastewater in South West England. Microbial genomics, 7(3). #### 2020\nB Kasprzyk-Hordern, K Proctor, K Jagadeesan, L Lopardo, K J O’Daly, R Standerwick, R Barden Estimation of community-wide multi-chemical exposure via water-based chemical mining: Key research gaps drawn from a comprehensive multi-biomarker multi-city dataset Environment International 147, 106331\nJ Rice, AM Kannan, E Castrignanò, K Jagadeesan, B Kasprzyk-Hordern Wastewater-based epidemiology combined with local prescription analysis as a tool for temporalmonitoring of drugs trends-A UK perspective Science of The Total Environment, 735, 139433\n\n\n0.0.3 2017\nKK Jagadeesan and S Ekström MALDIViz: a comprehensive informatics tool for MALDI-MS data visualization and analysis SLAS DISCOVERY: Advancing Life Sciences R&D 22 (10), 1246-1252 2017\nM Duarte, KK Jagadeesan, J Billing, E Yilmaz, T Laurell and S Ekström Solid-phase extraction of the alcohol abuse biomarker phosphatidylethanol using newly synthesized polymeric sorbent materials containing quaternary heterocyclic groups Journal of Chromatography A 1519, 1-8 2017\nKK Jagadeesan, C Rossetti, AA Qader, L Reubsaet, B Sellergren, T Laurell and S Ekström Filter Plate–Based Screening of MIP SPE Materials for Capture of the Biomarker Pro-Gastrin-Releasing Peptide SLAS Discovery 22 (10), 1253-1261 2017\n\n\n0.0.4 2016\nX Shen, C Huang, S Shinde, KK Jagadeesan, S Ekström, E Fritz and B Sellergren Catalytic formation of disulfide bonds in peptides by molecularly imprinted microgels at oil/water interfaces ACS applied materials & interfaces 8 (44), 30484-30491 2016\nKK Jagadeesan, C Wierzbicka, T Laurell, B Sellergren, S Shinde and S Ekstrom Multiplexed MALDI-MS arrays for screening of MIP solid phase extraction materials Journal of Chromatography B 1021, 213-220 2016\n\n\n0.0.5 2013\nS Kumar, KK Jagadeesan, AG Joshi, G Sumana, Immuno-CoPS (conducting paper strips) for futuristic cost-effective cancer diagnostics RSC Advances 3 (29), 11846-11853 2013\nKK Jagadeesan, S Kumar, G Sumana Application of conducting paper for selective detection of troponin Electrochemistry Communications 20, 71-74"
-  },
-  {
     "objectID": "tutorials.html",
     "href": "tutorials.html",
     "title": "Tutorials",
     "section": "",
-    "text": "Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and leaflet\n\n\n\nR\n\n\nR Tutorial\n\n\nMaps\n\n\nggplot\n\n\nleaflet\n\n\ntidyverse\n\n\nenvironmental monitoring\n\n\n\n\n\n\n\nKishore Kumar Jagadeesan\n\n\nJul 11, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and leaflet\n\n\n\nR\n\n\nR Tutorial\n\n\nMaps\n\n\nggplot\n\n\nleaflet\n\n\ntidyverse\n\n\nenvironmental monitoring\n\n\n\n\n\n\n\nKishore Kumar Jagadeesan\n\n\nJul 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nCreating and Sharing a Self-Contained Quarto Document in SharePoint/Teams\n\n\n\nR\n\n\nR Tutorial\n\n\nQuarto\n\n\nQuarto Tutorial\n\n\nSharepoint\n\n\nTeams\n\n\n\n\n\n\n\nKishore Kumar Jagadeesan\n\n\nJul 17, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "workshops/2022-08-17-nhsr-prana/index.html",

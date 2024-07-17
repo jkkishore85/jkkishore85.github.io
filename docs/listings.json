@@ -7,6 +7,12 @@
     ]
   },
   {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2024-07-11-newlook/index.html"
+    ]
+  },
+  {
     "listing": "/projects.html",
     "items": [
       "/projects/2023-02-21-perk/index.html",
@@ -15,15 +21,10 @@
     ]
   },
   {
-    "listing": "/posts.html",
-    "items": [
-      "/posts/2024-07-11-newlook/index.html"
-    ]
-  },
-  {
     "listing": "/tutorials.html",
     "items": [
-      "/tutorials/2024-07-11-rtutorial-map-01/index.html"
+      "/tutorials/2024-07-11-rtutorial-map-01/index.html",
+      "/tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html"
     ]
   }
 ]
