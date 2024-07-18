@@ -84,9 +84,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories','listing-author','listing-reading-time','listing-file-modified',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -276,16 +276,106 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="R,R Tutorial,Maps,ggplot,leaflet,tidyverse,environmental monitoring" data-listing-date-sort="1720652400000" data-listing-file-modified-sort="1721144077751" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2588">
-<a href="./tutorials/2024-07-11-rtutorial-map-01/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="tutorials\2024-07-11-rtutorial-map-01\index_files\figure-html\ggplot_map01-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and leaflet
-</h5>
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+         <option value="listing-file-modified-sort" data-direction="asc">
+          Modified - Oldest
+        </option>
+         <option value="listing-file-modified-sort" data-direction="desc">
+          Modified - Newest
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="R,R Tutorial,Quarto,Quarto Tutorial,Sharepoint,Teams" data-listing-date-sort="1721170800000" data-listing-file-modified-sort="1721238292829" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1142">
+<div class="thumbnail">
+<p><a href="./tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html" class="no-external"></a></p><a href="./tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html" class="no-external">Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R Tutorial'); return false;">
+R Tutorial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
+Quarto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Quarto Tutorial'); return false;">
+Quarto Tutorial
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Sharepoint'); return false;">
+Sharepoint
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Teams'); return false;">
+Teams
+</div>
+</div>
+<div class="listing-description">
+<a href="./tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html" class="no-external">This tutorial guides you through creating a self-contained HTML document using Quarto and sharing it on SharePoint or Microsoft Teams.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html" class="no-external">
+<div class="listing-date">
+Jul 17, 2024
+</div>
+<div class="listing-author">
+Kishore Kumar Jagadeesan
+</div>
+<div class="listing-reading-time">
+6 min
+</div>
+<div class="metadata-value listing-file-modified">
+Jul 17, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="R,R Tutorial,Maps,ggplot,leaflet,tidyverse,environmental monitoring" data-listing-date-sort="1720652400000" data-listing-file-modified-sort="1721144077751" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2588">
+<div class="thumbnail">
+<p><a href="./tutorials/2024-07-11-rtutorial-map-01/index.html" class="no-external"></a></p><a href="./tutorials/2024-07-11-rtutorial-map-01/index.html" class="no-external">
+<p class="card-img-top"><img src="tutorials\2024-07-11-rtutorial-map-01\index_files\figure-html\ggplot_map01-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./tutorials/2024-07-11-rtutorial-map-01/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./tutorials/2024-07-11-rtutorial-map-01/index.html" class="no-external">Creating Interactive Maps with R: A Beginner’s Guide Using ggplot2 and leaflet</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./tutorials/2024-07-11-rtutorial-map-01/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -309,69 +399,32 @@ tidyverse
 environmental monitoring
 </div>
 </div>
-<div class="card-text listing-description">
-In this tutorial, you’ll learn how to create static maps using <code>ggplot2</code> and interactive maps using <code>leaflet</code> in R. We’ll cover the basics, provide code examples, and include…
+<div class="listing-description">
+<a href="./tutorials/2024-07-11-rtutorial-map-01/index.html" class="no-external">In this tutorial, you’ll learn how to create static maps using <code>ggplot2</code> and interactive maps using <code>leaflet</code> in R. We’ll cover the basics, provide code examples, and include…</a>
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Kishore Kumar Jagadeesan
 </div>
+<div class="metadata">
+<a href="./tutorials/2024-07-11-rtutorial-map-01/index.html" class="no-external">
 <div class="listing-date">
 Jul 11, 2024
 </div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="R,R Tutorial,Quarto,Quarto Tutorial,Sharepoint,Teams" data-listing-date-sort="1721170800000" data-listing-file-modified-sort="1721238292829" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1142">
-<a href="./tutorials/2024-07-17-quartotutorial-sharepoint-01/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Creating and Sharing a Self-Contained Quarto Document in SharePoint/Teams
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R Tutorial'); return false;">
-R Tutorial
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto Tutorial'); return false;">
-Quarto Tutorial
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Sharepoint'); return false;">
-Sharepoint
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Teams'); return false;">
-Teams
-</div>
-</div>
-<div class="card-text listing-description">
-This tutorial guides you through creating a self-contained HTML document using Quarto and sharing it on SharePoint or Microsoft Teams.
-</div>
-<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Kishore Kumar Jagadeesan
 </div>
-<div class="listing-date">
-Jul 17, 2024
+<div class="listing-reading-time">
+13 min
 </div>
-</div>
-</div>
+<div class="metadata-value listing-file-modified">
+Jul 16, 2024
 </div>
 </a>
+</div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -13,6 +13,7 @@ website:
     title: "Kishore Kumar Jagadeesan"
   open-graph: true
   cookie-consent: true
+  back-to-top-navigation: true
   google-analytics: G-QVQJ5QYQZQ
   navbar:
     tools:

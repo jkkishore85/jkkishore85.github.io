@@ -1,14 +1,16 @@
 ---
 title: "Tutorials"
 listing: 
-  contents: tutorials # all Quarto docs in the `posts` directory will be included on your listing page
+  contents: tutorials
   feed: true
-  type: grid # or `default` or `table`; each type has its own set of yaml options to include
+  type: default 
   grid-item-border: true
   grid-item-align: left
   max-description-length: 175
   date-format: medium
   categories: numbered
-  sort-ui: false
-  filter-ui: false
+  sort-ui: true
+  filter-ui: true
+  sort: "date desc"
+  fields: [image, date, title, description, categories, author, reading-time, file-modified]
 ---
