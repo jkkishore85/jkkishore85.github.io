@@ -1,14 +1,42 @@
 ---
 title: "New Look"
-description: "New look for the website"
+description: "Welcome to the New Look of My Website!"
 author:
   - name: Kishore Kumar Jagadeesan
     url: https://jkkishore85.github.io
     orcid: 0000-0003-0916-256X
     affiliation: Research Associate, University of Bath
 date: 07-11-2024
-categories: [Quarto, R] # self-defined categories
+categories: [Quarto, R, News] # self-defined categories
 citation: 
   url: https://jkkishore85.github.io/mysite/posts/2024-07-11-newlook/ 
-draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+draft: false
 ---
+
+**Welcome to the New Look of My Website!**
+
+Hi everyone, here with some exciting updates about my website, <https://jkkishore85.github.io>. I’ve given the site a major facelift, and I’m thrilled to share the changes with you!
+
+**Fresh and Clean Design**
+
+First off, you’ll notice a cleaner, more modern design. This new layout is not only more aesthetically pleasing but also easier to navigate. I wanted to make the site more user-friendly and visually appealing.
+
+**New Features and Sections**
+
+1.  **Home**: A brief introduction about me and my work in environmental science, water quality, and public health.
+
+2.  **About**: More detailed information about my background and professional journey.
+
+3.  **Projects**: Showcasing the various projects I’ve worked on, highlighting my research and contributions.
+
+4.  **Blog**: Regular posts on topics ranging from research updates to personal musings.
+
+5.  **Courses & Workshops**: Information on the courses and workshops I conduct, providing valuable learning resources.
+
+6.  **Tutorials**: Step-by-step guides and tutorials, especially focusing on data visualization and statistical analysis using tools like R and Quarto.
+
+**Why the Change?**
+
+The old site was built with Jekyll, which became cumbersome to maintain. So, I switched to [Quarto](https://quarto.org/docs/), a platform that uses Markdown and Pandoc, allowing me to embed code (R, Python, JavaScript) directly into my posts. This means more dynamic and interactive content for you!
+
+I hope you enjoy the new site as much as I do. Explore around and stay tuned for more updates and fresh content soon!
